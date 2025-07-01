@@ -6,7 +6,8 @@ export async function GET(req: Request) {
   let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 
   if (!siteUrl) {
-    throw Error('Missing NEXT_PUBLIC_SITE_URL environment variable')
+    // Fallback URL for deployment - update this to your actual Vercel URL
+    siteUrl = 'https://oguzhanoguz.vercel.app'
   }
 
   let author = {
@@ -16,7 +17,7 @@ export async function GET(req: Request) {
 
   let feed = new Feed({
     title: author.name,
-    description: 'Multimedia Engineer - Portfolio and Projects',
+    description: 'Multimedia Engineer specializing in signal processing, embedded systems, and engineering projects',
     author,
     id: siteUrl,
     link: siteUrl,
