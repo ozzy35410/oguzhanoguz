@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/fotograf-favicon.png',
+    icon: '/foto.ico',
   },
 }
 
