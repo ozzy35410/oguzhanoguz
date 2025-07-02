@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: 'Oguzhan Oguz',
     images: [
       {
-        url: '/og-image.jpg',
+        url: 'https://oguzhanoguz.vercel.app/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Oguzhan Oguz - Multimedia Engineer',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Oguzhan Oguz - Multimedia Engineer',
     description: 'I\'m Oguzhan Oguz, studying multimedia processing master\'s program at KTH Royal Institute of Technology. I\'m interested in image processing, video processing, audio processing, signal processing and AI automation.',
-    images: ['/og-image.jpg'],
+    images: ['https://oguzhanoguz.vercel.app/og-image.jpg'],
   },
   alternates: {
     types: {
