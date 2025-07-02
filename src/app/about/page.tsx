@@ -11,6 +11,7 @@ import {
   XIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/about.jpg'
+import secondPortraitImage from '@/images/foto.jpg'
 
 function SocialLink({
   className,
@@ -61,9 +62,17 @@ export default function About() {
           <div className="max-w-xs px-2.5 lg:max-w-none">
             <Image
               src={portraitImage}
-              alt=""
+              alt="Oguzhan Oguz"
               sizes="(min-width: 1024px) 32rem, 20rem"
               className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+            />
+          </div>
+          <div className="mt-8 max-w-xs px-2.5 lg:max-w-none">
+            <Image
+              src={secondPortraitImage}
+              alt="Oguzhan Oguz - Professional"
+              sizes="(min-width: 1024px) 32rem, 20rem"
+              className="aspect-square -rotate-2 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
             />
           </div>
         </div>
