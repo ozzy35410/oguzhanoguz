@@ -4,7 +4,7 @@ export default function Project() {
   return (
     <SimpleLayout
       title="Image Compression: DCT vs FWT (5/3 Wavelets) and Rate-Distortion"
-      intro="EQ2330 Image and Video Processing • Spring 2025"
+      intro="EQ2330 Image and Video Processing • Fall 2025"
     >
       <div className="space-y-8">
         {/* Project Overview */}

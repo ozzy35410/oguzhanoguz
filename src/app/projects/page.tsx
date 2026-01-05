@@ -95,14 +95,14 @@ const personalProjects = [
 const kthSignalTheoryProjects = [
   {
     name: 'Gaussian Models and Simple Systems in Gaussian Noise',
-    period: 'Fall 2024',
+    period: 'Fall 2025',
     description: 'Explored Gaussian modeling and estimation through simulations, connecting core probability results with practical signal-processing examples under noise.',
     course: 'EQ1220 Signal Theory',
     status: 'Completed'
   },
   {
     name: 'Recovering a Permutation Key with a Linear FIR Equalizer and Decoding a Scrambled Color Image',
-    period: 'Fall 2024',
+    period: 'Fall 2025',
     description: 'Recovered an image-encryption permutation key from a noisy sequence using linear equalization, then successfully decoded a scrambled RGB image.',
     course: 'EQ1220 Signal Theory',
     status: 'Completed'
@@ -112,21 +112,21 @@ const kthSignalTheoryProjects = [
 const kthImageVideoProjects = [
   {
     name: 'Image Enhancement and Restoration (Spatial and Frequency Domain)',
-    period: 'Spring 2025',
+    period: 'Fall 2025',
     description: 'Implemented core image enhancement methods—contrast improvement, denoising, and deblurring—then compared their practical trade-offs on degraded test images.',
     course: 'EQ2330 Image and Video Processing',
     status: 'Completed'
   },
   {
     name: 'Image Compression: DCT vs FWT (5/3 Wavelets) and Rate-Distortion',
-    period: 'Spring 2025',
+    period: 'Fall 2025',
     description: 'Built and evaluated two transform coders (8×8 DCT and 5/3 wavelet FWT), mapping quantization strength to bitrate and reconstruction quality through rate–distortion curves.',
     course: 'EQ2330 Image and Video Processing',
     status: 'Completed'
   },
   {
     name: 'Video Coding: Intra, Conditional Replenishment, Motion Compensation',
-    period: 'Spring 2025',
+    period: 'Fall 2025',
     description: 'Developed a three-stage video coder—from intra-only to motion-compensated prediction—and quantified the compression gains from temporal modeling.',
     course: 'EQ2330 Image and Video Processing',
     status: 'Completed'

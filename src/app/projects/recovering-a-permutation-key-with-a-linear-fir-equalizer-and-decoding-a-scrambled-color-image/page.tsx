@@ -4,7 +4,7 @@ export default function Project() {
   return (
     <SimpleLayout
       title="Recovering a Permutation Key with a Linear FIR Equalizer and Decoding a Scrambled Color Image"
-      intro="EQ1220 Signal Theory • Fall 2024"
+      intro="EQ1220 Signal Theory • Fall 2025"
     >
       <div className="space-y-8">
         {/* Project Overview */}

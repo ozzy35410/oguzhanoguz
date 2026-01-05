@@ -4,7 +4,7 @@ export default function Project() {
   return (
     <SimpleLayout
       title="Video Coding: Intra, Conditional Replenishment, Motion Compensation"
-      intro="EQ2330 Image and Video Processing • Spring 2025"
+      intro="EQ2330 Image and Video Processing • Fall 2025"
     >
       <div className="space-y-8">
         {/* Project Overview */}
