@@ -92,8 +92,51 @@ const personalProjects = [
   }
 ]
 
+const kthSignalTheoryProjects = [
+  {
+    name: 'Gaussian Models and Simple Systems in Gaussian Noise',
+    period: 'Fall 2024',
+    description: 'Explored Gaussian modeling and estimation through simulations, connecting core probability results with practical signal-processing examples under noise.',
+    course: 'EQ1220 Signal Theory',
+    status: 'Completed'
+  },
+  {
+    name: 'Recovering a Permutation Key with a Linear FIR Equalizer and Decoding a Scrambled Color Image',
+    period: 'Fall 2024',
+    description: 'Recovered an image-encryption permutation key from a noisy sequence using linear equalization, then successfully decoded a scrambled RGB image.',
+    course: 'EQ1220 Signal Theory',
+    status: 'Completed'
+  }
+]
+
+const kthImageVideoProjects = [
+  {
+    name: 'Image Enhancement and Restoration (Spatial and Frequency Domain)',
+    period: 'Spring 2025',
+    description: 'Implemented core image enhancement methods—contrast improvement, denoising, and deblurring—then compared their practical trade-offs on degraded test images.',
+    course: 'EQ2330 Image and Video Processing',
+    status: 'Completed'
+  },
+  {
+    name: 'Image Compression: DCT vs FWT (5/3 Wavelets) and Rate-Distortion',
+    period: 'Spring 2025',
+    description: 'Built and evaluated two transform coders (8×8 DCT and 5/3 wavelet FWT), mapping quantization strength to bitrate and reconstruction quality through rate–distortion curves.',
+    course: 'EQ2330 Image and Video Processing',
+    status: 'Completed'
+  },
+  {
+    name: 'Video Coding: Intra, Conditional Replenishment, Motion Compensation',
+    period: 'Spring 2025',
+    description: 'Developed a three-stage video coder—from intra-only to motion-compensated prediction—and quantified the compression gains from temporal modeling.',
+    course: 'EQ2330 Image and Video Processing',
+    status: 'Completed'
+  }
+]
+
 export default function Projects() {
   const [kthExpanded, setKthExpanded] = useState(false)
+  const [kthSignalTheoryExpanded, setKthSignalTheoryExpanded] = useState(false)
+  const [kthImageVideoExpanded, setKthImageVideoExpanded] = useState(false)
   const [metuExpanded, setMetuExpanded] = useState(false)
   const [graduationExpanded, setGraduationExpanded] = useState(false)
   const [termExpanded, setTermExpanded] = useState(false)
@@ -251,9 +294,101 @@ export default function Projects() {
 
           {kthExpanded && (
             <div className="mt-6 space-y-6">
-              <p className="text-center text-zinc-600 dark:text-zinc-400 py-8">
-                Projects coming soon...
-              </p>
+              {/* EQ1220 Signal Theory Course Button */}
+              <div>
+                <button
+                  onClick={() => setKthSignalTheoryExpanded(!kthSignalTheoryExpanded)}
+                  className="w-full flex items-center justify-between p-3 bg-zinc-50 dark:bg-zinc-800/50 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-700/50 transition-colors"
+                >
+                  <h3 className="text-xl font-semibold text-zinc-700 dark:text-zinc-200">
+                    EQ1220 Signal Theory
+                  </h3>
+                  <ChevronDownIcon 
+                    className={`h-5 w-5 text-zinc-500 transition-transform ${
+                      kthSignalTheoryExpanded ? 'rotate-180' : ''
+                    }`} 
+                  />
+                </button>
+
+                {kthSignalTheoryExpanded && (
+                  <div className="mt-4">
+                    <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+                      {kthSignalTheoryProjects.map((project) => (
+                        <Card as="li" key={project.name}>
+                          <div className="flex items-center gap-2 mb-2">
+                            <Card.Link href={`/projects/${project.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')}`}>
+                              <h4 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                                {project.name}
+                              </h4>
+                            </Card.Link>
+                          </div>
+                          <div className="mt-2">
+                            <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                              {project.course} • {project.period}
+                            </p>
+                            <span className="inline-block px-2 py-1 text-xs rounded-full mt-2 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                              {project.status}
+                            </span>
+                          </div>
+                          {project.description && (
+                            <div className="mt-4">
+                              <Card.Description>{project.description}</Card.Description>
+                            </div>
+                          )}
+                        </Card>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              {/* EQ2330 Image and Video Processing Course Button */}
+              <div>
+                <button
+                  onClick={() => setKthImageVideoExpanded(!kthImageVideoExpanded)}
+                  className="w-full flex items-center justify-between p-3 bg-zinc-50 dark:bg-zinc-800/50 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-700/50 transition-colors"
+                >
+                  <h3 className="text-xl font-semibold text-zinc-700 dark:text-zinc-200">
+                    EQ2330 Image and Video Processing
+                  </h3>
+                  <ChevronDownIcon 
+                    className={`h-5 w-5 text-zinc-500 transition-transform ${
+                      kthImageVideoExpanded ? 'rotate-180' : ''
+                    }`} 
+                  />
+                </button>
+
+                {kthImageVideoExpanded && (
+                  <div className="mt-4">
+                    <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+                      {kthImageVideoProjects.map((project) => (
+                        <Card as="li" key={project.name}>
+                          <div className="flex items-center gap-2 mb-2">
+                            <Card.Link href={`/projects/${project.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')}`}>
+                              <h4 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                                {project.name}
+                              </h4>
+                            </Card.Link>
+                          </div>
+                          <div className="mt-2">
+                            <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                              {project.course} • {project.period}
+                            </p>
+                            <span className="inline-block px-2 py-1 text-xs rounded-full mt-2 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                              {project.status}
+                            </span>
+                          </div>
+                          {project.description && (
+                            <div className="mt-4">
+                              <Card.Description>{project.description}</Card.Description>
+                            </div>
+                          )}
+                        </Card>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           )}
         </section>
