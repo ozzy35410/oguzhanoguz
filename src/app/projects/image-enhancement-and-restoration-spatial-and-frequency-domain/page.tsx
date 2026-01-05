@@ -20,7 +20,7 @@ export default function Project() {
         {/* Key Techniques */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">
-            Key Techniques
+            Key Components
           </h2>
           <ul className="list-disc list-inside space-y-2 text-base text-zinc-600 dark:text-zinc-400">
             <li>Histogram equalization for contrast enhancement</li>
@@ -34,32 +34,33 @@ export default function Project() {
           </ul>
         </section>
 
-        {/* Results */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">
-            Results
-          </h2>
-          <p className="text-base text-zinc-600 dark:text-zinc-400">
-            The project demonstrated that histogram equalization effectively improved contrast despite discrete intensity limitations. Median filtering proved superior to mean filtering for salt-and-pepper noise while maintaining sharper edges. Frequency-domain Wiener filtering successfully addressed out-of-focus blur, with proper tuning achieving an optimal balance between sharpness and artifact suppression.
-          </p>
-        </section>
-
-        {/* Report */}
+        {/* Project Report */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">
             Project Report
           </h2>
-          <div className="flex gap-4">
+          <div className="w-full" style={{ height: '800px' }}>
+            <iframe
+              src="/EQ2330_Project1.pdf"
+              className="w-full h-full border border-zinc-200 dark:border-zinc-700 rounded-lg"
+              title="Project Report"
+            />
+          </div>
+          <div className="flex gap-4 mt-4">
             <a
               href="/EQ2330_Project1.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 bg-zinc-800 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-lg hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-colors"
+              className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
             >
-              <svg className="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              Download Report (PDF)
+              Open in new tab
+            </a>
+            <a
+              href="/EQ2330_Project1.pdf"
+              download
+              className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              Download
             </a>
           </div>
         </section>

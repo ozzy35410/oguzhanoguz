@@ -17,46 +17,10 @@ export default function Project() {
           </p>
         </section>
 
-        {/* Coding Architectures */}
+        {/* Key Components */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">
-            Coding Architectures
-          </h2>
-          
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100 mb-2">
-                1. Intra Coder (Baseline)
-              </h3>
-              <p className="text-base text-zinc-600 dark:text-zinc-400">
-                Independent frame compression using block DCT and quantization. Captures spatial redundancy only, serving as the performance baseline.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100 mb-2">
-                2. Conditional Replenishment
-              </h3>
-              <p className="text-base text-zinc-600 dark:text-zinc-400">
-                Introduces temporal prediction through block copying from previous reconstructed frames. Uses Lagrangian cost optimization to balance rate and distortion.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100 mb-2">
-                3. Motion-Compensated Coding
-              </h3>
-              <p className="text-base text-zinc-600 dark:text-zinc-400">
-                Full motion estimation using block matching with residual encoding. Achieves optimal rate-distortion performance through advanced temporal prediction.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Key Techniques */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">
-            Key Techniques
+            Key Components
           </h2>
           <ul className="list-disc list-inside space-y-2 text-base text-zinc-600 dark:text-zinc-400">
             <li>Block-based DCT transformation</li>
@@ -71,32 +35,33 @@ export default function Project() {
           </ul>
         </section>
 
-        {/* Results */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">
-            Results
-          </h2>
-          <p className="text-base text-zinc-600 dark:text-zinc-400">
-            The motion-compensated coder demonstrated superior rate-distortion performance compared to both the intra coder and conditional replenishment approaches. By exploiting temporal redundancy through motion estimation and residual coding, it substantially reduced prediction energy while maintaining high visual quality. The progression from intra to conditional replenishment to motion compensation clearly illustrated the compression gains achievable through increasingly sophisticated temporal modeling techniques.
-          </p>
-        </section>
-
-        {/* Report */}
+        {/* Project Report */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">
             Project Report
           </h2>
-          <div className="flex gap-4">
+          <div className="w-full" style={{ height: '800px' }}>
+            <iframe
+              src="/EQ2330_Project3.pdf"
+              className="w-full h-full border border-zinc-200 dark:border-zinc-700 rounded-lg"
+              title="Project Report"
+            />
+          </div>
+          <div className="flex gap-4 mt-4">
             <a
               href="/EQ2330_Project3.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 bg-zinc-800 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-lg hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-colors"
+              className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
             >
-              <svg className="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              Download Report (PDF)
+              Open in new tab
+            </a>
+            <a
+              href="/EQ2330_Project3.pdf"
+              download
+              className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              Download
             </a>
           </div>
         </section>
