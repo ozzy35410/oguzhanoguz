@@ -93,6 +93,7 @@ const personalProjects = [
 ]
 
 export default function Projects() {
+  const [kthExpanded, setKthExpanded] = useState(false)
   const [metuExpanded, setMetuExpanded] = useState(false)
   const [graduationExpanded, setGraduationExpanded] = useState(false)
   const [termExpanded, setTermExpanded] = useState(false)
@@ -232,6 +233,31 @@ export default function Projects() {
           )}
         </section>
 
+        {/* KTH Projects Section */}
+        <section>
+          <button
+            onClick={() => setKthExpanded(!kthExpanded)}
+            className="w-full flex items-center justify-between p-4 bg-white dark:bg-zinc-800 rounded-lg shadow-sm ring-1 ring-zinc-900/5 dark:ring-white/10 hover:bg-zinc-50 dark:hover:bg-zinc-700 transition-colors"
+          >
+            <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">
+              KTH Projects (M.S.)
+            </h2>
+            <ChevronDownIcon 
+              className={`h-6 w-6 text-zinc-500 transition-transform ${
+                kthExpanded ? 'rotate-180' : ''
+              }`} 
+            />
+          </button>
+
+          {kthExpanded && (
+            <div className="mt-6 space-y-6">
+              <p className="text-center text-zinc-600 dark:text-zinc-400 py-8">
+                Projects coming soon...
+              </p>
+            </div>
+          )}
+        </section>
+
         {/* METU Projects Section */}
         <section>
           <button
@@ -239,7 +265,7 @@ export default function Projects() {
             className="w-full flex items-center justify-between p-4 bg-white dark:bg-zinc-800 rounded-lg shadow-sm ring-1 ring-zinc-900/5 dark:ring-white/10 hover:bg-zinc-50 dark:hover:bg-zinc-700 transition-colors"
           >
             <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">
-              METU Projects
+              METU Projects (B.S.)
             </h2>
             <ChevronDownIcon 
               className={`h-6 w-6 text-zinc-500 transition-transform ${
