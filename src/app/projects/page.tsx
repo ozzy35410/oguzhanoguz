@@ -113,7 +113,7 @@ const kthImageVideoProjects = [
   {
     name: 'Image Enhancement and Restoration (Spatial and Frequency Domain)',
     period: 'Fall 2025',
-    description: 'Implemented core image enhancement methods—contrast improvement, denoising, and deblurring—then compared their practical trade-offs on degraded test images.',
+    description: 'Implemented core image enhancement methods (contrast improvement, denoising, and deblurring) and compared their practical trade-offs on degraded test images.',
     course: 'EQ2330 Image and Video Processing',
     status: 'Completed'
   },
@@ -127,7 +127,7 @@ const kthImageVideoProjects = [
   {
     name: 'Video Coding: Intra, Conditional Replenishment, Motion Compensation',
     period: 'Fall 2025',
-    description: 'Developed a three-stage video coder—from intra-only to motion-compensated prediction—and quantified the compression gains from temporal modeling.',
+    description: 'Developed a three-stage video coder (from intra-only to motion-compensated prediction) and quantified the compression gains from temporal modeling.',
     course: 'EQ2330 Image and Video Processing',
     status: 'Completed'
   }
