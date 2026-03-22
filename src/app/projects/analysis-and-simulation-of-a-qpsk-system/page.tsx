@@ -37,6 +37,34 @@ export default function Project() {
             <li>Training-length and eye-diagram experiments</li>
           </ul>
         </section>
+
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">Project Report</h2>
+          <div className="w-full" style={{ height: '800px' }}>
+            <iframe
+              src="/EQ2310_Project1.pdf"
+              className="w-full h-full border border-zinc-200 dark:border-zinc-700 rounded-lg"
+              title="EQ2310 Project Report"
+            />
+          </div>
+          <div className="flex gap-4 mt-4">
+            <a
+              href="/EQ2310_Project1.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              Open in new tab
+            </a>
+            <a
+              href="/EQ2310_Project1.pdf"
+              download
+              className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              Download
+            </a>
+          </div>
+        </section>
       </div>
     </SimpleLayout>
   )
