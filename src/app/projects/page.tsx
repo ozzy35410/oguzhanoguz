@@ -152,7 +152,6 @@ const kthDigitalCommunicationsProjects = [
     status: 'Completed'
   }
 ]
-
 const kthImageVideoProjects = [
   {
     name: 'Image Enhancement and Restoration (Spatial and Frequency Domain)',
@@ -446,10 +445,10 @@ export default function Projects() {
                   <h3 className="text-xl font-semibold text-zinc-700 dark:text-zinc-200">
                     EQ2330 Image and Video Processing
                   </h3>
-                  <ChevronDownIcon 
+                  <ChevronDownIcon
                     className={`h-5 w-5 text-zinc-500 transition-transform ${
                       kthImageVideoExpanded ? 'rotate-180' : ''
-                    }`} 
+                    }`}
                   />
                 </button>
 
@@ -542,10 +541,10 @@ export default function Projects() {
                   <h3 className="text-xl font-semibold text-zinc-700 dark:text-zinc-200">
                     EQ1220 Signal Theory
                   </h3>
-                  <ChevronDownIcon 
+                  <ChevronDownIcon
                     className={`h-5 w-5 text-zinc-500 transition-transform ${
                       kthSignalTheoryExpanded ? 'rotate-180' : ''
-                    }`} 
+                    }`}
                   />
                 </button>
 
