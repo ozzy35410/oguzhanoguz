@@ -129,7 +129,7 @@ const kthAdaptiveSignalProjects = [
 const kthPatternRecognitionProjects = [
   {
     name: 'Activity Recognition Using a Baum-Welch-Trained Hidden Markov Model',
-    period: 'Fall 2026',
+    period: 'Spring 2026',
     description: 'Built a three-state Gaussian HMM for standing, walking, and running recognition from phone accelerometer data. Baum-Welch training and sequence decoding improved mixed-recording accuracy over an independent Gaussian baseline, with Viterbi reaching approximately 85.03%.',
     course: 'EQ2341 Pattern Recognition and Machine Learning',
     status: 'Completed'

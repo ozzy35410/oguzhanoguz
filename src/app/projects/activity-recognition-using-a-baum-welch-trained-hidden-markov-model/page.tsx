@@ -1,10 +1,11 @@
 import { SimpleLayout } from '@/components/SimpleLayout'
+import { DocumentViewer } from '@/components/DocumentViewer'
 
 export default function Project() {
   return (
     <SimpleLayout
       title="Activity Recognition Using a Baum-Welch-Trained Hidden Markov Model"
-      intro="EQ2341 Pattern Recognition and Machine Learning • Fall 2026"
+      intro="EQ2341 Pattern Recognition and Machine Learning • Spring 2026"
     >
       <div className="space-y-8">
         <section className="space-y-4">
@@ -41,13 +42,10 @@ export default function Project() {
 
         <section className="space-y-4">
           <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">Project Report</h2>
-          <div className="w-full" style={{ height: '800px' }}>
-            <iframe
-              src="/EQ2341_Final_Project_Report_Oguzhan_Oguz.pdf"
-              className="w-full h-full border border-zinc-200 dark:border-zinc-700 rounded-lg"
-              title="EQ2341 Final Project Report"
-            />
-          </div>
+          <DocumentViewer
+            src="/EQ2341_Final_Project_Report_Oguzhan_Oguz.pdf"
+            title="EQ2341 Final Project Report"
+          />
           <div className="flex gap-4 mt-4">
             <a
               href="/EQ2341_Final_Project_Report_Oguzhan_Oguz.pdf"
@@ -69,13 +67,34 @@ export default function Project() {
 
         <section className="space-y-4">
           <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">Project Presentation</h2>
-          <a
-            href="/EQ2341_Final_Project_Presentation_Oguzhan_Oguz.pptx"
-            download
-            className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-          >
-            Download presentation
-          </a>
+          <DocumentViewer
+            src="/EQ2341_Final_Project_Presentation_Oguzhan_Oguz.pdf"
+            title="EQ2341 Final Project Presentation"
+          />
+          <div className="flex gap-4 mt-4">
+            <a
+              href="/EQ2341_Final_Project_Presentation_Oguzhan_Oguz.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              Open presentation in new tab
+            </a>
+            <a
+              href="/EQ2341_Final_Project_Presentation_Oguzhan_Oguz.pdf"
+              download
+              className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              Download presentation PDF
+            </a>
+            <a
+              href="/EQ2341_Final_Project_Presentation_Oguzhan_Oguz.pptx"
+              download
+              className="inline-flex items-center text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              Download PowerPoint file
+            </a>
+          </div>
         </section>
       </div>
     </SimpleLayout>
