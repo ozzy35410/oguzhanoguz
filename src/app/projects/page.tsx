@@ -126,7 +126,6 @@ const kthAdaptiveSignalProjects = [
   }
 ]
 
-<<<<<<< HEAD
 const kthPatternRecognitionProjects = [
   {
     name: 'Activity Recognition Using a Baum-Welch-Trained Hidden Markov Model',
@@ -136,9 +135,6 @@ const kthPatternRecognitionProjects = [
     status: 'Completed'
   }
 ]
-
-=======
->>>>>>> e651244a79c515cd5c3518cea6bd6c2d302205bf
 const kthSpeechAudioProjects = [
   {
     name: 'Speech Production and Models',
@@ -191,10 +187,7 @@ const kthImageVideoProjects = [
 
 export default function Projects() {
   const [kthExpanded, setKthExpanded] = useState(false)
-<<<<<<< HEAD
   const [kthPatternRecognitionExpanded, setKthPatternRecognitionExpanded] = useState(false)
-=======
->>>>>>> e651244a79c515cd5c3518cea6bd6c2d302205bf
   const [kthAdaptiveExpanded, setKthAdaptiveExpanded] = useState(false)
   const [kthSpeechAudioExpanded, setKthSpeechAudioExpanded] = useState(false)
   const [kthSignalTheoryExpanded, setKthSignalTheoryExpanded] = useState(false)
@@ -357,7 +350,6 @@ export default function Projects() {
 
           {kthExpanded && (
             <div className="mt-6 space-y-6">
-<<<<<<< HEAD
               {/* EQ2341 Pattern Recognition and Machine Learning Course Button */}
               <div>
                 <button
@@ -403,9 +395,6 @@ export default function Projects() {
                   </div>
                 )}
               </div>
-
-=======
->>>>>>> e651244a79c515cd5c3518cea6bd6c2d302205bf
               {/* EQ2401 Adaptive Signal Processing Course Button */}
               <div>
                 <button
