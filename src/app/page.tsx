@@ -185,7 +185,7 @@ function Work() {
   let work: Array<Role> = [
     {
       company: 'KTH Royal Institute of Technology',
-      title: 'Research Assistant, ongoing LiDAR-Visual-Inertial SLAM research',
+      title: 'Ongoing LiDAR-Visual-Inertial SLAM project',
       description: 'Working with Yixi Cai on degeneracy-aware LiDAR-Visual-Inertial SLAM. The work investigates robust state estimation when sensor measurements become less informative.',
       logo: logoKth,
       start: '07/2026',
@@ -301,7 +301,6 @@ export default function Home() {
           </div>
         </div>
       </Container>
-      <HighlightedProjects />
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="space-y-10">
@@ -312,6 +311,7 @@ export default function Home() {
           </div>
         </div>
       </Container>
+      <HighlightedProjects />
     </>
   )
 }
