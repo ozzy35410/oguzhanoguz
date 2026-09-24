@@ -95,6 +95,7 @@ function SocialLink({
 interface Role {
   company: string
   title: string
+  description?: string
   logo: ImageProps['src']
   start: string | { label: string; dateTime: string }
   end: string | { label: string; dateTime: string }
@@ -137,6 +138,11 @@ function Role({ role }: { role: Role }) {
           <span aria-hidden="true">—</span>{' '}
           <time dateTime={endDate}>{endLabel}</time>
         </dd>
+        {role.description && (
+          <dd className="mt-1 w-full text-xs leading-5 text-zinc-500 dark:text-zinc-400">
+            {role.description}
+          </dd>
+        )}
       </dl>
     </li>
   )
@@ -178,6 +184,14 @@ function Education() {
 function Work() {
   let work: Array<Role> = [
     {
+      company: 'KTH Royal Institute of Technology',
+      title: 'Research Assistant, ongoing LiDAR-Visual-Inertial SLAM research',
+      description: 'Working with Yixi Cai on degeneracy-aware LiDAR-Visual-Inertial SLAM. The work investigates robust state estimation when sensor measurements become less informative.',
+      logo: logoKth,
+      start: '07/2026',
+      end: 'Present',
+    },
+    {
       company: 'DEICO Engineering Inc.',
       title: 'Test Engineering Internship - Developed C# control and test interfaces for communication-protocol devices',
       logo: logoDeico,
@@ -212,6 +226,55 @@ function Work() {
   )
 }
 
+const highlightedProjects = [
+  {
+    title: 'Inside-Out Tracking Sensor Suite',
+    eyebrow: 'B.Sc. Graduation Project',
+    description:
+      'An onboard-sensor VR tracking system that estimates six-degree-of-freedom head motion without external tracking hardware.',
+    href: '/projects/inside-out-tracking-sensor-suite',
+  },
+  {
+    title: 'Activity Recognition with a Hidden Markov Model',
+    eyebrow: 'EQ2341 Pattern Recognition and Machine Learning',
+    description:
+      'A Gaussian HMM for recognizing standing, walking, and running from phone accelerometer data.',
+    href: '/projects/activity-recognition-using-a-baum-welch-trained-hidden-markov-model',
+  },
+  {
+    title: 'Video Coding with Motion Compensation',
+    eyebrow: 'EQ2330 Image and Video Processing',
+    description:
+      'A comparison of intra-only, conditional-replenishment, and motion-compensated video coding methods.',
+    href: '/projects/video-coding-intra-conditional-replenishment-motion-compensation',
+  },
+]
+
+function HighlightedProjects() {
+  return (
+    <Container className="mt-20 md:mt-24">
+      <div className="max-w-2xl">
+        <h2 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
+          Highlighted Projects
+        </h2>
+        <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
+          A selection of projects spanning embedded systems, machine learning, and multimedia processing.
+        </p>
+      </div>
+      <div className="mt-10 grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-3">
+        {highlightedProjects.map((project) => (
+          <Card key={project.href} as="article">
+            <Card.Eyebrow decorate>{project.eyebrow}</Card.Eyebrow>
+            <Card.Title href={project.href}>{project.title}</Card.Title>
+            <Card.Description>{project.description}</Card.Description>
+            <Card.Cta>View project</Card.Cta>
+          </Card>
+        ))}
+      </div>
+    </Container>
+  )
+}
+
 export default function Home() {
   return (
     <>
@@ -238,6 +301,7 @@ export default function Home() {
           </div>
         </div>
       </Container>
+      <HighlightedProjects />
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="space-y-10">
