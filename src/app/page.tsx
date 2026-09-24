@@ -252,16 +252,12 @@ const highlightedProjects = [
 
 function HighlightedProjects() {
   return (
-    <Container className="mt-20 md:mt-24">
-      <div className="max-w-2xl">
-        <h2 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
-          Highlighted Projects
-        </h2>
-        <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
-          A selection of projects spanning embedded systems, machine learning, and multimedia processing.
-        </p>
-      </div>
-      <div className="mt-10 grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-3">
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        <BriefcaseIcon className="h-6 w-6 flex-none" />
+        <span className="ml-3">Highlighted Projects</span>
+      </h2>
+      <div className="mt-6 space-y-8">
         {highlightedProjects.map((project) => (
           <Card key={project.href} as="article">
             <Card.Eyebrow decorate>{project.eyebrow}</Card.Eyebrow>
@@ -271,7 +267,7 @@ function HighlightedProjects() {
           </Card>
         ))}
       </div>
-    </Container>
+    </div>
   )
 }
 
@@ -305,13 +301,13 @@ export default function Home() {
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="space-y-10">
             <Education />
+            <HighlightedProjects />
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Work />
           </div>
         </div>
       </Container>
-      <HighlightedProjects />
     </>
   )
 }
