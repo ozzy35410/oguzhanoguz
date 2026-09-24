@@ -17,7 +17,7 @@ function ChevronDownIcon({ className }: { className?: string }) {
 const graduationProject = {
   name: 'Inside-Out Tracking Sensor Suite',
   period: 'Oct 2024 - May 2025',
-  description: 'The Inside-Out Tracking Sensor for Virtual Reality Applications project is designed to overcome the limitations of VR systems using external sensors. The aim is to provide a portable, cost-effective and immersive experience by developing an inside-out system that can perform precise and real-time 6-degree-of-freedom head tracking.',
+  description: 'Developed an inside-out tracking system for VR that uses onboard sensors to estimate six-degree-of-freedom head motion without external tracking hardware.',
   course: 'Graduation Project',
   status: 'Completed'
 }
@@ -26,28 +26,28 @@ const termProjects = [
   {
     name: 'Signal Classification with Deep Learning',
     period: 'Fall 2024',
-    description: 'Developed a deep learning model for signal classification in communication systems. The project involved  synthetic data generation, signal processing, and ResNet implementation for communication applications. Focused on improving classification accuracy and real-time performance.',
+    description: 'Trained a ResNet to classify five analog modulation types from simulated I/Q signals, then examined how SNR and carrier-frequency offset affect the results.',
     course: 'EE435 Communications I',
     status: 'Completed'
   },
   {
     name: 'Frequency-Hopping Spread Spectrum (FHSS) Transmitter and Receiver',
     period: 'Fall 2024',
-    description: 'Implemented a frequency-hopping spread spectrum communication system including both transmitter and receiver components. The project focused on digital signal processing techniques, wireless communication protocols, and anti-jamming capabilities in challenging environments.',
+    description: 'Built an FHSS transmitter and receiver that converts text to M-FSK signals, hops across predefined frequencies, and recovers the message through time-frequency analysis.',
     course: 'EE430 Digital Signal Processing',
     status: 'Completed'
   },
   {
     name: 'FPGA Implementation of Isometric Shooter Game',
     period: 'Spring 2024',
-    description: 'Developed a complete isometric shooter game implemented on FPGA hardware. The project involved digital logic design, VHDL programming, real-time graphics processing, and embedded systems optimization for interactive gaming applications.',
+    description: 'Built an FPGA-based isometric shooter in Verilog, with VGA graphics, rotating player control, enemy movement, projectiles, scoring, and game-over logic.',
     course: 'EE314 Digital Electronics',
     status: 'Completed'
   },
   {
     name: 'Integrated Analog Micro-Air Conditioner',
     period: 'Fall 2023',
-    description: 'Designed and implemented an integrated analog circuit for micro-air conditioning applications. This project involved circuit design, simulation, and practical implementation using analog electronics principles, thermal management, and efficiency optimization.',
+    description: 'Designed and tested an analog temperature-control circuit with an LM35 sensor, adjustable setpoint, heating and cooling control, and RGB status indication.',
     course: 'EE313 Analog Electronics Laboratory',
     status: 'Completed'
   }
@@ -57,7 +57,7 @@ const deicoProjects = [
   {
     name: 'Oscilloscope and Waveform Generator Control Interface and Test Application with C#',
     period: 'Winter 2025',
-    description: 'Comprehensive C# interface for controlling Keysight MSOX3104T Mixed Signal Oscilloscope and 33500B Waveform Generator. Features automated testing capabilities, complete parameter control, and measurement functions for professional laboratory applications.',
+    description: 'Created a C# desktop application to control a Keysight MSOX3104T oscilloscope and 33500B waveform generator, including automated measurements and test routines.',
     company: 'Deico - Test Engineering Internship',
     status: 'Completed',
     github: 'https://github.com/ozzy35410/Oscilloscope-and-Waveform-Generator-Control-Interface-and-Test-Application-with-Csharp'
@@ -65,7 +65,7 @@ const deicoProjects = [
   {
     name: 'RS-232 Communication and Test Application with UPort1250',
     period: 'Winter 2025',
-    description: 'RS-232 communication interface application for UPort 1250 device with automated testing capabilities. Enables communication between different devices and includes comprehensive testing processes for connection authenticity verification.',
+    description: 'Built a C# application for RS-232 communication through a UPort 1250 device, with connection checks and automated test procedures.',
     company: 'Deico - Test Engineering Internship',
     status: 'Completed',
     github: 'https://github.com/ozzy35410/RSR-232-communication-and-test-application-with-UPort1250'
@@ -76,7 +76,7 @@ const umramProjects = [
   {
     name: 'Jitter Analysis Framework for Sinusoidal Signals',
     period: 'Summer 2024',
-    description: 'Developed a comprehensive MATLAB-based framework for calculating and analyzing multiple jitter metrics in sinusoidal signals. The project involved mathematical demonstration of jitter effects and precise estimation of zero-crossing instants using advanced signal processing techniques.',
+    description: 'Created a MATLAB framework to estimate and compare jitter measures in sinusoidal signals, including zero-crossing timing analysis and simulation-based validation.',
     company: 'UMRAM - National Magnetic Resonance Research Center',
     status: 'Completed'
   }
@@ -86,7 +86,7 @@ const personalProjects = [
   {
     name: 'Oscilloscope & Waveform Generator Control Interface and Test Application',
     period: 'Jan 2025',
-    description: 'Created a comprehensive control interface and test application for oscilloscopes and waveform generators using C#. The project includes instrument control, data acquisition, automated testing capabilities, and a user-friendly interface for laboratory and professional use.',
+    description: 'Built a C# interface for instrument control, data acquisition, and automated tests with an oscilloscope and waveform generator.',
     course: 'Personal Project',
     status: 'Completed'
   }
@@ -96,7 +96,7 @@ const kthSignalTheoryProjects = [
   {
     name: 'Gaussian Models and Simple Systems in Gaussian Noise',
     period: 'Fall 2025',
-    description: 'Explored Gaussian modeling and estimation through simulations, connecting core probability results with practical signal-processing examples under noise.',
+    description: 'Worked through Gaussian estimation, bivariate distributions, periodograms, and noisy linear systems, checking the theoretical results against simulations.',
     course: 'EQ1220 Signal Theory',
     status: 'Completed'
   },
@@ -113,14 +113,14 @@ const kthAdaptiveSignalProjects = [
   {
     name: 'Wiener Filtering for Speech Enhancement',
     period: 'Spring 2026',
-    description: 'Implemented and compared three Wiener speech-enhancement designs using AR-based speech and noise PSD estimation from a single noisy recording. The non-causal design produced the strongest noise-floor attenuation, while stronger suppression introduced more speech distortion.',
+    description: 'Compared non-causal, FIR, and causal Wiener filters for speech enhancement using AR-based spectral estimates from one noisy recording. Stronger suppression also introduced more speech distortion.',
     course: 'EQ2401 Adaptive Signal Processing',
     status: 'Completed'
   },
   {
     name: 'Adaptive Line Enhancer for Tonal Disturbance Reduction',
     period: 'Spring 2026',
-    description: 'Built an adaptive line enhancer to suppress periodic tonal interference in speech and compared LMS, NLMS, and RLS implementations. All methods achieved strong attenuation, with LMS and RLS delivering the highest tone reduction in this setup.',
+    description: 'Used an adaptive line enhancer to remove a periodic tone from speech and compared LMS, NLMS, and RLS filters. LMS and RLS gave the strongest tone reduction in this setup.',
     course: 'EQ2401 Adaptive Signal Processing',
     status: 'Completed'
   }
@@ -130,7 +130,7 @@ const kthPatternRecognitionProjects = [
   {
     name: 'Activity Recognition Using a Baum-Welch-Trained Hidden Markov Model',
     period: 'Spring 2026',
-    description: 'Built a three-state Gaussian HMM for standing, walking, and running recognition from phone accelerometer data. Baum-Welch training and sequence decoding improved mixed-recording accuracy over an independent Gaussian baseline, with Viterbi reaching approximately 85.03%.',
+    description: 'Trained a three-state Gaussian HMM to recognize standing, walking, and running from phone accelerometer data. Viterbi decoding reached about 85% accuracy on the mixed test recording.',
     course: 'EQ2341 Pattern Recognition and Machine Learning',
     status: 'Completed'
   }
@@ -139,14 +139,14 @@ const kthSpeechAudioProjects = [
   {
     name: 'Speech Production and Models',
     period: 'Spring 2026',
-    description: 'Analyzed speech production through bandwidth tests, voicing and pitch analysis, LPC spectral modeling, phoneme inspection, and spectrogram design, then built a progressively improved LPC vocoder.',
+    description: 'Analyzed speech bandwidth, voicing, pitch, LPC spectra, phonemes, and spectrograms, then used those results to build and refine an LPC vocoder.',
     course: 'EQ2321 Speech and Audio Processing',
     status: 'Completed'
   },
   {
     name: 'Quantization and Speech Coding',
     period: 'Spring 2026',
-    description: 'Implemented scalar, parametric, waveform, and predictive speech-coding experiments, including log-energy and pitch coding, two-stage LSF vector quantization, PCM rate studies, and adaptive open-loop DPCM.',
+    description: 'Studied speech coding through scalar and parametric quantization, LSF vector quantization, PCM rate tests, and adaptive open-loop DPCM.',
     course: 'EQ2321 Speech and Audio Processing',
     status: 'Completed'
   }
@@ -156,7 +156,7 @@ const kthDigitalCommunicationsProjects = [
   {
     name: 'Analysis and Simulation of a QPSK System',
     period: 'Fall 2025',
-    description: 'Implemented a Gray-coded QPSK baseband simulation chain with pulse shaping, matched filtering, training-based synchronization, phase estimation, and hard-decision detection, then compared BER curves against theory.',
+    description: 'Simulated a Gray-coded QPSK link with pulse shaping, matched filtering, training-based synchronization, and phase estimation, then compared BER results with theory.',
     course: 'EQ2310 Digital Communications',
     status: 'Completed'
   }
@@ -165,21 +165,21 @@ const kthImageVideoProjects = [
   {
     name: 'Image Enhancement and Restoration (Spatial and Frequency Domain)',
     period: 'Fall 2025',
-    description: 'Implemented core image enhancement methods (contrast improvement, denoising, and deblurring) and compared their practical trade-offs on degraded test images.',
+    description: 'Applied histogram equalization, mean and median filtering, and Wiener deblurring to degraded images, then compared the practical trade-offs of each method.',
     course: 'EQ2330 Image and Video Processing',
     status: 'Completed'
   },
   {
     name: 'Image Compression: DCT vs FWT (5/3 Wavelets) and Rate-Distortion',
     period: 'Fall 2025',
-    description: 'Built and evaluated two transform coders (8×8 DCT and 5/3 wavelet FWT), mapping quantization strength to bitrate and reconstruction quality through rate–distortion curves.',
+    description: 'Compared 8x8 DCT and 5/3 wavelet coders over several quantization settings, using bitrate and PSNR to study their rate-distortion behavior.',
     course: 'EQ2330 Image and Video Processing',
     status: 'Completed'
   },
   {
     name: 'Video Coding: Intra, Conditional Replenishment, Motion Compensation',
     period: 'Fall 2025',
-    description: 'Developed a three-stage video coder (from intra-only to motion-compensated prediction) and quantified the compression gains from temporal modeling.',
+    description: 'Compared intra-only, conditional-replenishment, and motion-compensated video coders on QCIF sequences. Motion compensation gave the best rate-distortion performance.',
     course: 'EQ2330 Image and Video Processing',
     status: 'Completed'
   }

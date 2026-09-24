@@ -2,6 +2,7 @@ import { type Metadata } from 'next'
 import Link from 'next/link'
 
 import { Container } from '@/components/Container'
+import { DocumentViewer } from '@/components/DocumentViewer'
 
 export const metadata: Metadata = {
   title: 'RS-232 Communication and Test Application with UPort1250',
@@ -63,11 +64,11 @@ export default function RS232CommunicationProject() {
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <h2>Project Overview</h2>
               <p>
-                This project is an interface application that enables RS-232 communication between the UPort 1250 device and different devices such as an oscilloscope. The application provides a comprehensive solution for serial communication testing and can also be used for connection verification through a feedback loop configuration using just the UPort device.
+                This C# application communicates with laboratory devices over RS-232 through a UPort 1250 adapter. It can also verify a serial connection through a loopback configuration that uses only the UPort device.
               </p>
               
               <p>
-                The application includes a fully automated testing process that tests the authenticity of the device or connection, making it an essential tool for laboratory environments and industrial testing scenarios where reliable serial communication is critical.
+                The test flow checks whether the device and connection behave as expected, then records the result for later review.
               </p>
 
               <h3>Key Features</h3>
@@ -75,7 +76,7 @@ export default function RS232CommunicationProject() {
                 <li><strong>RS-232 Communication:</strong> Full implementation of RS-232 protocol for reliable serial communication</li>
                 <li><strong>UPort 1250 Integration:</strong> Optimized interface for UPort 1250 USB-to-serial converter</li>
                 <li><strong>Device Compatibility:</strong> Support for various devices including oscilloscopes and other laboratory instruments</li>
-                <li><strong>Automated Testing:</strong> Comprehensive testing suite for connection authenticity verification</li>
+                <li><strong>Automated Testing:</strong> Connection and communication checks</li>
                 <li><strong>Feedback Loop Testing:</strong> Self-testing capability using UPort device feedback configuration</li>
                 <li><strong>Real-time Monitoring:</strong> Live communication monitoring and data visualization</li>
                 <li><strong>Error Detection:</strong> Advanced error detection and reporting mechanisms</li>
@@ -83,7 +84,7 @@ export default function RS232CommunicationProject() {
 
               <h3>Technical Implementation</h3>
               <p>
-                The application is built with robust error handling and provides detailed logging capabilities for troubleshooting communication issues. It supports various baud rates, data bits, stop bits, and parity configurations to ensure compatibility with a wide range of devices.
+                The application records communication errors and supports different baud rates, data bits, stop bits, and parity settings for use with different devices.
               </p>
 
               <h3>Testing Capabilities</h3>
@@ -171,13 +172,7 @@ export default function RS232CommunicationProject() {
                 </div>
 
                 <div className="border border-zinc-200 dark:border-zinc-700 rounded-lg overflow-hidden">
-                  <iframe
-                    src="/deico.pdf#view=FitH"
-                    width="100%"
-                    height="800"
-                    title="Deico Internship Report"
-                    className="w-full"
-                  />
+                  <DocumentViewer src="/deico.pdf#view=FitH" title="Deico Internship Report" />
                 </div>
               </div>
             </div>

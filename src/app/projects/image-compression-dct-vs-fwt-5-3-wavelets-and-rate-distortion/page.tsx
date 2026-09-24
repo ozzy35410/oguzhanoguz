@@ -1,4 +1,5 @@
 import { SimpleLayout } from '@/components/SimpleLayout'
+import { DocumentViewer } from '@/components/DocumentViewer'
 
 export default function Project() {
   return (
@@ -13,7 +14,7 @@ export default function Project() {
             Project Overview
           </h2>
           <p className="text-base text-zinc-600 dark:text-zinc-400">
-            Two compression pipelines were implemented: blockwise 8×8 DCT and multi-scale FWT using 5/3 biorthogonal filter banks with a lifting-based realization. After uniform mid-tread quantization, bitrate was estimated via ideal entropy coding (per-coefficient for DCT and per-subband for FWT), enabling fair rate–distortion comparison across multiple images. Results showed similar performance between DCT and FWT at higher bitrates, while image content (e.g., texture-heavy scenes) strongly influenced PSNR at the same rate. Distortion behavior also reflected theory: image-domain and transform-domain MSE aligned for orthonormal DCT but not for the biorthogonal 5/3 wavelet system.
+            Two compression pipelines were implemented: blockwise 8×8 DCT and multi-scale FWT using 5/3 biorthogonal filter banks with a lifting-based realization. After uniform mid-tread quantization, bitrate was estimated via ideal entropy coding (per-coefficient for DCT and per-subband for FWT), enabling fair rate-distortion comparison across multiple images. Results showed similar performance between DCT and FWT at higher bitrates, while image content (e.g., texture-heavy scenes) strongly influenced PSNR at the same rate. Distortion behavior also reflected theory: image-domain and transform-domain MSE aligned for orthonormal DCT but not for the biorthogonal 5/3 wavelet system.
           </p>
         </section>
 
@@ -40,13 +41,7 @@ export default function Project() {
           <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">
             Project Report
           </h2>
-          <div className="w-full" style={{ height: '800px' }}>
-            <iframe
-              src="/EQ2330_Project2.pdf"
-              className="w-full h-full border border-zinc-200 dark:border-zinc-700 rounded-lg"
-              title="Project Report"
-            />
-          </div>
+          <DocumentViewer src="/EQ2330_Project2.pdf" title="Project Report" />
           <div className="flex gap-4 mt-4">
             <a
               href="/EQ2330_Project2.pdf"

@@ -1,4 +1,5 @@
 import { SimpleLayout } from '@/components/SimpleLayout'
+import { DocumentViewer } from '@/components/DocumentViewer'
 
 export default function Project() {
   return (
@@ -39,13 +40,7 @@ export default function Project() {
           <h2 className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">
             Project Report
           </h2>
-          <div className="w-full" style={{ height: '800px' }}>
-            <iframe
-              src="/EQ2330_Project1.pdf"
-              className="w-full h-full border border-zinc-200 dark:border-zinc-700 rounded-lg"
-              title="Project Report"
-            />
-          </div>
+          <DocumentViewer src="/EQ2330_Project1.pdf" title="Project Report" />
           <div className="flex gap-4 mt-4">
             <a
               href="/EQ2330_Project1.pdf"

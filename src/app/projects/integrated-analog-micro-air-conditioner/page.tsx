@@ -2,6 +2,7 @@ import { type Metadata } from 'next'
 import Link from 'next/link'
 
 import { Container } from '@/components/Container'
+import { DocumentViewer } from '@/components/DocumentViewer'
 
 export const metadata: Metadata = {
   title: 'Integrated Analog Micro-Air Conditioner',
@@ -63,7 +64,7 @@ export default function AnalogAirConditionerProject() {
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <h2>Project Overview</h2>
               <p>
-                This project presents the design and implementation of an integrated analog micro–air conditioner, divided into sensing, control, operation, and display units. Ambient temperature is measured with an amplified LM35 sensor and compared against a potentiometer-set reference via a precision difference amplifier with diode-based deadband control.
+                This project presents the design and implementation of an integrated analog micro-air conditioner, divided into sensing, control, operation, and display units. Ambient temperature is measured with an amplified LM35 sensor and compared against a potentiometer-set reference via a precision difference amplifier with diode-based deadband control.
               </p>
               
               <p>
@@ -78,13 +79,7 @@ export default function AnalogAirConditionerProject() {
               </h2>
               <div className="bg-white dark:bg-zinc-800 rounded-lg shadow-lg border border-zinc-200 dark:border-zinc-700 overflow-hidden">
                 {/* Embedded PDF Viewer */}
-                <div className="w-full" style={{ height: '600px' }}>
-                  <iframe
-                    src="/313.pdf"
-                    className="w-full h-full border-0"
-                    title="Integrated Analog Micro-Air Conditioner Project Report"
-                  />
-                </div>
+                <DocumentViewer src="/313.pdf" title="Integrated Analog Micro-Air Conditioner Project Report" />
                 
                 {/* Footer with download option */}
                 <div className="px-6 py-4 bg-zinc-50 dark:bg-zinc-800/50 border-t border-zinc-200 dark:border-zinc-700">

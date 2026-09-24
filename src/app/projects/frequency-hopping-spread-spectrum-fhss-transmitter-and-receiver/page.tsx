@@ -2,6 +2,7 @@ import { type Metadata } from 'next'
 import Link from 'next/link'
 
 import { Container } from '@/components/Container'
+import { DocumentViewer } from '@/components/DocumentViewer'
 
 export const metadata: Metadata = {
   title: 'Frequency-Hopping Spread Spectrum (FHSS) Transmitter and Receiver',
@@ -78,13 +79,7 @@ export default function FHSSProject() {
               </h2>
               <div className="bg-white dark:bg-zinc-800 rounded-lg shadow-lg border border-zinc-200 dark:border-zinc-700 overflow-hidden">
                 {/* Embedded PDF Viewer */}
-                <div className="w-full" style={{ height: '600px' }}>
-                  <iframe
-                    src="/430.pdf"
-                    className="w-full h-full border-0"
-                    title="FHSS Transmitter and Receiver Project Report"
-                  />
-                </div>
+                <DocumentViewer src="/430.pdf" title="FHSS Transmitter and Receiver Project Report" />
                 
                 {/* Footer with download option */}
                 <div className="px-6 py-4 bg-zinc-50 dark:bg-zinc-800/50 border-t border-zinc-200 dark:border-zinc-700">

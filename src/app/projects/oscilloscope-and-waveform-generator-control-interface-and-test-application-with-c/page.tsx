@@ -2,10 +2,11 @@ import { type Metadata } from 'next'
 import Link from 'next/link'
 
 import { Container } from '@/components/Container'
+import { DocumentViewer } from '@/components/DocumentViewer'
 
 export const metadata: Metadata = {
   title: 'Oscilloscope and Waveform Generator Control Interface and Test Application with C#',
-  description: 'Comprehensive C# interface for controlling Keysight MSOX3104T Mixed Signal Oscilloscope and 33500B Waveform Generator.',
+  description: 'C# application for controlling a Keysight MSOX3104T oscilloscope and 33500B waveform generator.',
 }
 
 function ArrowLeft(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -63,11 +64,11 @@ export default function OscilloscopeControlProject() {
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <h2>Project Overview</h2>
               <p>
-                This project provides a comprehensive C# interface to control the Keysight MSOX3104T Mixed Signal Oscilloscope and KEYSIGHT 33500B Waveform Generator. It allows users to control the oscilloscope&apos;s settings and generate signals through a computer interface, enabling professional laboratory automation and testing capabilities.
+                This C# application controls a Keysight MSOX3104T mixed-signal oscilloscope and a Keysight 33500B waveform generator from one desktop interface. It exposes the main instrument settings and lets the user generate and measure test signals without switching between separate tools.
               </p>
               
               <p>
-                The application features a dedicated test tab that automatically tests the accuracy of parameters produced by the waveform generator using the oscilloscope measurement functions. This provides a completely automated testing solution for laboratory and industrial applications.
+                A dedicated test tab compares waveform-generator settings with measurements from the oscilloscope. It checks parameters such as frequency, amplitude, duty cycle, and pulse width and records the measured result and test duration.
               </p>
 
               <h3>Key Features</h3>
@@ -77,7 +78,7 @@ export default function OscilloscopeControlProject() {
                 <li>Horizontal axis control (timebase)</li>
                 <li>Vertical axis control (voltage scales)</li>
                 <li>Channel opening and closing</li>
-                <li>Comprehensive measurement functions: Vpp, Vrms, frequency, period, mean (full screen cycle-to-cycle), amplitude, phase, duty cycle, pulse width, rise time, fall time, overshoot, preshoot, slew rate</li>
+                <li>Measurement functions for Vpp, Vrms, frequency, period, mean, amplitude, phase, duty cycle, pulse width, rise time, fall time, overshoot, preshoot, and slew rate</li>
               </ul>
 
               <h4>Keysight 33500B Waveform Generator Control Interface</h4>
@@ -91,7 +92,7 @@ export default function OscilloscopeControlProject() {
               <ul>
                 <li>Automatic testing of frequency, amplitude, duty cycle, and pulse width parameters</li>
                 <li>Support for both CH1 and CH2 testing</li>
-                <li>Comprehensive results reporting and total test time tracking</li>
+                <li>Test results and total test time tracking</li>
               </ul>
 
               <h3>Hardware Requirements</h3>
@@ -177,13 +178,7 @@ export default function OscilloscopeControlProject() {
                 </div>
 
                 <div className="border border-zinc-200 dark:border-zinc-700 rounded-lg overflow-hidden">
-                  <iframe
-                    src="/deico.pdf#view=FitH"
-                    width="100%"
-                    height="800"
-                    title="Deico Internship Report"
-                    className="w-full"
-                  />
+                  <DocumentViewer src="/deico.pdf#view=FitH" title="Deico Internship Report" />
                 </div>
               </div>
             </div>
