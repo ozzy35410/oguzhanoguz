@@ -1,83 +1,313 @@
-import Image from 'next/image'
+import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
+import clsx from 'clsx'
 
+import { Button } from '@/components/Button'
+import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
-import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
-import portrait from '@/images/mezun.png'
+import {
+  GitHubIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  XIcon,
+} from '@/components/SocialIcons'
+import logoAirbnb from '@/images/logos/airbnb.svg'
+import logoFacebook from '@/images/logos/facebook.svg'
+import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoStarbucks from '@/images/logos/starbucks.svg'
+import logoMetu from '@/images/logos/metu.jpg'
+import logoKth from '@/images/logos/kth.png'
+import logoDeico from '@/images/logos/deico.jpeg'
+import logoUmram from '@/images/logos/umram.jpg'
 
-const projectRows = [
-  { id: 'P-01', area: 'SENSOR FUSION', title: 'Inside-Out Tracking Sensor Suite', result: 'Camera + IMU VR pose tracking', href: '/projects/inside-out-tracking-sensor-suite' },
-  { id: 'P-02', area: 'SEQUENTIAL ML', title: 'Activity Recognition with HMMs', result: 'Accelerometer time-series classification', href: '/projects/activity-recognition-using-a-baum-welch-trained-hidden-markov-model' },
-  { id: 'P-03', area: 'VIDEO CODING', title: 'Motion-Compensated Video Coding', result: 'Rate-distortion evaluation', href: '/projects/video-coding-intra-conditional-replenishment-motion-compensation' },
-]
-
-const skills = ['State estimation', 'Adaptive filtering', 'Computer vision', 'Signal analysis', 'Machine learning', 'Embedded systems']
-
-export default function Home() {
+function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <Container className="py-10 sm:py-14">
-      <section className="border-2 border-[#13283a] bg-[#f4f1e8] dark:border-[#d5e5d3] dark:bg-[#13283a]">
-        <div className="grid lg:grid-cols-[1.45fr_0.55fr]">
-          <div className="p-6 sm:p-10 lg:p-14">
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#c65336]">Available for research and engineering conversations</p>
-            <h1 className="mt-8 max-w-4xl text-5xl font-black leading-[0.9] tracking-[-0.065em] text-[#13283a] sm:text-7xl lg:text-8xl dark:text-[#f4f1e8]">Signals.<br />Systems.<br /><span className="text-[#ff6b4a]">Decisions.</span></h1>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-[#385064] dark:text-[#c2d0ca]">I am Oguzhan Oguz, an M.Sc. student at KTH working on signal processing, visual perception, and robust estimation for real systems.</p>
-            <div className="mt-9 flex flex-wrap gap-3 font-mono text-xs font-bold uppercase tracking-[0.1em]">
-              <Link href="/projects" className="bg-[#13283a] px-5 py-3 text-[#f4f1e8] transition hover:bg-[#ff6b4a] dark:bg-[#d5e5d3] dark:text-[#13283a]">Browse project index →</Link>
-              <a href="/CV.pdf" target="_blank" rel="noopener noreferrer" className="border-2 border-[#13283a] px-5 py-3 text-[#13283a] transition hover:bg-[#ff6b4a] dark:border-[#d5e5d3] dark:text-[#d5e5d3]">Open CV [PDF]</a>
-            </div>
-          </div>
-          <div className="relative min-h-80 border-t-2 border-[#13283a] bg-[#d5e5d3] p-6 dark:border-[#d5e5d3] dark:bg-[#f4f1e8] lg:border-t-0 lg:border-l-2">
-            <p className="font-mono text-[0.64rem] font-bold uppercase tracking-[0.14em] text-[#385064]">Field note 001</p>
-            <Image src={portrait} alt="Oguzhan Oguz" priority className="absolute bottom-0 right-0 h-[84%] w-auto object-contain object-bottom" />
-            <div className="absolute bottom-6 left-6 max-w-[13rem] border-l-2 border-[#ff6b4a] pl-3 font-mono text-xs leading-5 text-[#13283a]">Multimedia Processing &amp; Analysis<br />KTH Royal Institute of Technology</div>
-          </div>
-        </div>
-        <div className="grid border-t-2 border-[#13283a] bg-[#13283a] text-[#f4f1e8] sm:grid-cols-3 dark:border-[#d5e5d3]">
-          <Stat value="2025-27" label="M.Sc. at KTH" />
-          <Stat value="2026" label="Ongoing SLAM research" />
-          <Stat value="3.57/4.00" label="B.Sc. GPA at METU" />
-        </div>
-      </section>
-
-      <section className="mt-14 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-        <div>
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#c65336]">Current line of work</p>
-          <h2 className="mt-4 text-3xl font-black tracking-[-0.045em] text-[#13283a] dark:text-[#f4f1e8]">Robust perception when measurements get difficult.</h2>
-          <p className="mt-5 leading-7 text-[#385064] dark:text-[#c2d0ca]">My current KTH project investigates LiDAR-Visual-Inertial SLAM under weak geometry, visual feature starvation, and challenging motion. Earlier work spans audio enhancement, video processing, and sequential classification.</p>
-          <div className="mt-6 flex gap-4">
-            <a href="https://github.com/ozzy35410" aria-label="GitHub" className="text-[#13283a] hover:text-[#ff6b4a] dark:text-[#d5e5d3]"><GitHubIcon className="h-5 w-5 fill-current" /></a>
-            <a href="https://www.linkedin.com/in/oguzhan-oguz-" aria-label="LinkedIn" className="text-[#13283a] hover:text-[#ff6b4a] dark:text-[#d5e5d3]"><LinkedInIcon className="h-5 w-5 fill-current" /></a>
-            <a href="mailto:oguzhano@kth.se" className="font-mono text-xs font-bold uppercase tracking-[0.08em] text-[#13283a] underline decoration-[#ff6b4a] decoration-2 underline-offset-4 dark:text-[#d5e5d3]">Email me</a>
-          </div>
-        </div>
-        <div className="border-t-2 border-[#13283a] dark:border-[#d5e5d3]">
-          <p className="py-3 font-mono text-[0.64rem] font-bold uppercase tracking-[0.14em] text-[#617180]">Methods and tools</p>
-          <div className="grid grid-cols-2 border-l-2 border-t-2 border-[#13283a] sm:grid-cols-3 dark:border-[#d5e5d3]">
-            {skills.map((skill, index) => <div key={skill} className="border-b-2 border-r-2 border-[#13283a] p-4 font-mono text-xs font-bold uppercase tracking-[0.06em] text-[#13283a] dark:border-[#d5e5d3] dark:text-[#d5e5d3]"><span className="mr-2 text-[#ff6b4a]">0{index + 1}</span>{skill}</div>)}
-          </div>
-        </div>
-      </section>
-
-      <section className="mt-20 sm:mt-28">
-        <div className="flex items-end justify-between gap-6 border-b-2 border-[#13283a] pb-4 dark:border-[#d5e5d3]">
-          <div><p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#c65336]">Selected project records</p><h2 className="mt-3 text-4xl font-black tracking-[-0.05em] text-[#13283a] dark:text-[#f4f1e8]">Work worth opening.</h2></div>
-          <Link href="/projects" className="shrink-0 font-mono text-xs font-bold uppercase tracking-[0.08em] text-[#13283a] hover:text-[#ff6b4a] dark:text-[#d5e5d3]">Full index →</Link>
-        </div>
-        <div className="border-l-2 border-[#13283a] dark:border-[#d5e5d3]">
-          {projectRows.map((project) => (
-            <Link key={project.id} href={project.href} className="group grid gap-3 border-b-2 border-r-2 border-[#13283a] p-5 transition-colors hover:bg-[#ff6b4a] sm:grid-cols-[5rem_1fr_auto] sm:items-center sm:gap-6 dark:border-[#d5e5d3] dark:hover:bg-[#ff6b4a]">
-              <span className="font-mono text-xs font-bold text-[#c65336] group-hover:text-[#13283a]">{project.id}</span>
-              <div><p className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.14em] text-[#617180] group-hover:text-[#13283a]">{project.area}</p><h3 className="mt-1 text-xl font-bold tracking-[-0.025em] text-[#13283a]">{project.title}</h3></div>
-              <span className="font-mono text-xs uppercase tracking-[0.07em] text-[#385064] group-hover:text-[#13283a]">{project.result} →</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-    </Container>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path
+        d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
+        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+      />
+      <path
+        d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
+        className="stroke-zinc-400 dark:stroke-zinc-500"
+      />
+    </svg>
   )
 }
 
-function Stat({ value, label }: { value: string; label: string }) {
-  return <div className="border-b-2 border-[#f4f1e8]/25 p-5 last:border-b-0 sm:border-r-2 sm:border-b-0 sm:last:border-r-0"><p className="font-mono text-xl font-bold text-[#ff8d72]">{value}</p><p className="mt-1 font-mono text-[0.62rem] uppercase tracking-[0.12em] text-[#c2d0ca]">{label}</p></div>
+function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path
+        d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
+        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+      />
+      <path
+        d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
+        className="stroke-zinc-400 dark:stroke-zinc-500"
+      />
+    </svg>
+  )
+}
+
+function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+function SocialLink({
+  icon: Icon,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof Link> & {
+  icon: React.ComponentType<{ className?: string }>
+}) {
+  return (
+    <Link className="group -m-1 p-1" {...props}>
+      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    </Link>
+  )
+}
+
+interface Role {
+  company: string
+  title: string
+  description?: string
+  logo: ImageProps['src']
+  start: string | { label: string; dateTime: string }
+  end: string | { label: string; dateTime: string }
+}
+
+function Role({ role }: { role: Role }) {
+  let startLabel =
+    typeof role.start === 'string' ? role.start : role.start.label
+  let startDate =
+    typeof role.start === 'string' ? role.start : role.start.dateTime
+
+  let endLabel = typeof role.end === 'string' ? role.end : role.end.label
+  let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
+
+  return (
+    <li className="flex gap-4">
+      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-white dark:ring-0 overflow-hidden">
+        <Image 
+          src={role.logo} 
+          alt="" 
+          className="h-8 w-8 object-contain rounded-full" 
+          unoptimized 
+        />
+      </div>
+      <dl className="flex flex-auto flex-wrap gap-x-2">
+        <dt className="sr-only">Company</dt>
+        <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+          {role.company}
+        </dd>
+        <dt className="sr-only">Role</dt>
+        <dd className="text-xs text-zinc-500 dark:text-zinc-400">
+          {role.title}
+        </dd>
+        <dt className="sr-only">Date</dt>
+        <dd
+          className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+          aria-label={`${startLabel} until ${endLabel}`}
+        >
+          <time dateTime={startDate}>{startLabel}</time>{' '}
+          <span aria-hidden="true">—</span>{' '}
+          <time dateTime={endDate}>{endLabel}</time>
+        </dd>
+        {role.description && (
+          <dd className="mt-1 w-full text-xs leading-5 text-zinc-500 dark:text-zinc-400">
+            {role.description}
+          </dd>
+        )}
+      </dl>
+    </li>
+  )
+}
+
+function Education() {
+  let education: Array<Role> = [
+    {
+      company: 'KTH Royal Institute of Technology',
+      title: 'Master of Science in Information and Network Engineering (Multimedia Processing and Analysis track)',
+      logo: logoKth,
+      start: '2025',
+      end: '2027',
+    },
+    {
+      company: 'Middle East Technical University',
+      title: 'Bachelor of Science in Electrical–Electronics Engineering',
+      logo: logoMetu,
+      start: '2020',
+      end: '2025',
+    },
+  ]
+
+  return (
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        <BriefcaseIcon className="h-6 w-6 flex-none" />
+        <span className="ml-3">Education</span>
+      </h2>
+      <ol className="mt-6 space-y-4">
+        {education.map((role, roleIndex) => (
+          <Role key={roleIndex} role={role} />
+        ))}
+      </ol>
+    </div>
+  )
+}
+
+function Work() {
+  let work: Array<Role> = [
+    {
+      company: 'KTH Royal Institute of Technology',
+      title: 'Ongoing LiDAR-Visual-Inertial SLAM project',
+      description: 'Working with Yixi Cai on degeneracy-aware LiDAR-Visual-Inertial SLAM. The work investigates robust state estimation when sensor measurements become less informative.',
+      logo: logoKth,
+      start: '07/2026',
+      end: 'Present',
+    },
+    {
+      company: 'DEICO Engineering Inc.',
+      title: 'Test Engineering Internship - Developed C# control and test interfaces for communication-protocol devices',
+      logo: logoDeico,
+      start: '01/2025',
+      end: '02/2025',
+    },
+    {
+      company: 'National Magnetic Resonance Research Center',
+      title: 'Undergraduate Research Internship - Studies were conducted with Prof. Ergin Atalar to examine jitter effects with MATLAB-based studies and mathematical modeling',
+      logo: logoUmram,
+      start: '07/2024',
+      end: '08/2024',
+    },
+  ]
+
+  return (
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        <BriefcaseIcon className="h-6 w-6 flex-none" />
+        <span className="ml-3">Work Experience</span>
+      </h2>
+      <ol className="mt-6 space-y-4">
+        {work.map((role, roleIndex) => (
+          <Role key={roleIndex} role={role} />
+        ))}
+      </ol>
+      <Button href="/CV.pdf" variant="secondary" className="group mt-6 w-full" target="_blank" rel="noopener noreferrer">
+        Download CV
+        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+      </Button>
+    </div>
+  )
+}
+
+const highlightedProjects = [
+  {
+    title: 'Inside-Out Tracking Sensor Suite',
+    eyebrow: 'B.Sc. Graduation Project',
+    description:
+      'An onboard-sensor VR tracking system that estimates six-degree-of-freedom head motion without external tracking hardware.',
+    href: '/projects/inside-out-tracking-sensor-suite',
+  },
+  {
+    title: 'Activity Recognition with a Hidden Markov Model',
+    eyebrow: 'EQ2341 Pattern Recognition and Machine Learning',
+    description:
+      'A Gaussian HMM for recognizing standing, walking, and running from phone accelerometer data.',
+    href: '/projects/activity-recognition-using-a-baum-welch-trained-hidden-markov-model',
+  },
+  {
+    title: 'Video Coding with Motion Compensation',
+    eyebrow: 'EQ2330 Image and Video Processing',
+    description:
+      'A comparison of intra-only, conditional-replenishment, and motion-compensated video coding methods.',
+    href: '/projects/video-coding-intra-conditional-replenishment-motion-compensation',
+  },
+]
+
+function HighlightedProjects() {
+  return (
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        <BriefcaseIcon className="h-6 w-6 flex-none" />
+        <span className="ml-3">Highlighted Projects</span>
+      </h2>
+      <div className="mt-6 space-y-8">
+        {highlightedProjects.map((project) => (
+          <Card key={project.href} as="article">
+            <Card.Eyebrow decorate>{project.eyebrow}</Card.Eyebrow>
+            <Card.Title href={project.href}>{project.title}</Card.Title>
+            <Card.Description>{project.description}</Card.Description>
+            <Card.Cta>View project</Card.Cta>
+          </Card>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default function Home() {
+  return (
+    <>
+      <Container className="mt-9">
+        <div className="max-w-2xl">
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+            Oguzhan Oguz - Multimedia Engineer
+          </h1>
+          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            I&apos;m Oguzhan Oguz. I am studying in the Information and Network Engineering master&apos;s program at KTH Royal. You can see my projects on my page.
+          </p>
+          <div className="mt-6 flex gap-6">
+            <SocialLink href="https://github.com/ozzy35410" aria-label="Follow on GitHub" icon={GitHubIcon} />
+            <SocialLink
+              href="https://www.linkedin.com/in/oguzhan-oguz-"
+              aria-label="Follow on LinkedIn"
+              icon={LinkedInIcon}
+            />
+            <SocialLink
+              href="https://www.instagram.com/ogzhn.ogzz/"
+              aria-label="Follow on Instagram"
+              icon={InstagramIcon}
+            />
+          </div>
+        </div>
+      </Container>
+      <Container className="mt-24 md:mt-28">
+        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
+          <div className="space-y-10">
+            <Education />
+            <HighlightedProjects />
+          </div>
+          <div className="space-y-10 lg:pl-16 xl:pl-24">
+            <Work />
+          </div>
+        </div>
+      </Container>
+    </>
+  )
 }

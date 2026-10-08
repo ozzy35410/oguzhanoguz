@@ -34,11 +34,3 @@
   --text-9xl: 8rem;
   --text-9xl--line-height: 1;
 }
-
-::selection { background: #ff6b4a; color: #13283a; }
-html { background: #f4f1e8; }
-body {
-  background-color: #f4f1e8;
-  background-image: linear-gradient(rgb(19 40 58 / 0.045) 1px, transparent 1px), linear-gradient(90deg, rgb(19 40 58 / 0.045) 1px, transparent 1px);
-  background-size: 28px 28px;
-}

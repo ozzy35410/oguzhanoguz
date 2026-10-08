@@ -1,11 +1,40 @@
 import Link from 'next/link'
 
-import { Container } from '@/components/Container'
+import { ContainerInner, ContainerOuter } from '@/components/Container'
+
+function NavLink({
+  href,
+  children,
+}: {
+  href: string
+  children: React.ReactNode
+}) {
+  return (
+    <Link
+      href={href}
+      className="transition hover:text-teal-500 dark:hover:text-teal-400"
+    >
+      {children}
+    </Link>
+  )
+}
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t-2 border-[#13283a] bg-[#13283a] py-8 text-[#f4f1e8] dark:border-[#d5e5d3] sm:mt-32">
-      <Container><div className="flex flex-col gap-5 text-sm sm:flex-row sm:items-center sm:justify-between"><p className="font-mono text-xs uppercase tracking-[0.12em] text-[#c2d0ca]">Stockholm, Sweden · 2026</p><div className="flex gap-5 font-mono text-xs uppercase tracking-[0.1em]"><Link href="/about" className="hover:text-[#ff8d72]">Profile</Link><Link href="/projects" className="hover:text-[#ff8d72]">Projects</Link><a href="mailto:oguzhano@kth.se" className="hover:text-[#ff8d72]">Email</a></div></div></Container>
+    <footer className="mt-32 flex-none">
+      <ContainerOuter>
+        <div className="border-t border-zinc-100 pt-10 pb-16 dark:border-zinc-700/40">
+          <ContainerInner>
+            <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
+                <NavLink href="/about">About</NavLink>
+                <NavLink href="/projects">Projects</NavLink>
+              </div>
+             
+            </div>
+          </ContainerInner>
+        </div>
+      </ContainerOuter>
     </footer>
   )
 }
