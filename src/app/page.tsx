@@ -230,6 +230,7 @@ const highlightedProjects = [
   {
     title: 'Inside-Out Tracking Sensor Suite',
     eyebrow: 'B.Sc. Graduation Project',
+    note: 'Camera + IMU · pose tracking',
     description:
       'An onboard-sensor VR tracking system that estimates six-degree-of-freedom head motion without external tracking hardware.',
     href: '/projects/inside-out-tracking-sensor-suite',
@@ -237,6 +238,7 @@ const highlightedProjects = [
   {
     title: 'Activity Recognition with a Hidden Markov Model',
     eyebrow: 'EQ2341 Pattern Recognition and Machine Learning',
+    note: 'Accelerometer · sequence model',
     description:
       'A Gaussian HMM for recognizing standing, walking, and running from phone accelerometer data.',
     href: '/projects/activity-recognition-using-a-baum-welch-trained-hidden-markov-model',
@@ -244,6 +246,7 @@ const highlightedProjects = [
   {
     title: 'Video Coding with Motion Compensation',
     eyebrow: 'EQ2330 Image and Video Processing',
+    note: 'Motion compensation · rate-distortion',
     description:
       'A comparison of intra-only, conditional-replenishment, and motion-compensated video coding methods.',
     href: '/projects/video-coding-intra-conditional-replenishment-motion-compensation',
@@ -261,7 +264,12 @@ function HighlightedProjects() {
         {highlightedProjects.map((project) => (
           <Card key={project.href} as="article">
             <Card.Eyebrow decorate>{project.eyebrow}</Card.Eyebrow>
-            <Card.Title href={project.href}>{project.title}</Card.Title>
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
+              <Card.Title href={project.href}>{project.title}</Card.Title>
+              <p className="relative z-10 font-mono text-[0.65rem] uppercase tracking-[0.09em] text-zinc-400 dark:text-zinc-500">
+                {project.note}
+              </p>
+            </div>
             <Card.Description>{project.description}</Card.Description>
             <Card.Cta>View project</Card.Cta>
           </Card>
