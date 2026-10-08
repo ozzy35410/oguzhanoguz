@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   title: {
     template: '%s - Oguzhan Oguz',
     default:
-      'Oguzhan Oguz - Multimedia Engineer',
+      'Oguzhan Oguz | Signal Processing and Perception Systems',
   },
   description:
-    'I\'m Oguzhan Oguz, studying Information and Network Engineering master\'s program at KTH Royal Institute of Technology. I\'m interested in image processing, video processing, audio processing, signal processing and AI automation.',
+    'Oguzhan Oguz is an M.Sc. student at KTH working across signal processing, computer vision, sensor fusion, and machine learning.',
   openGraph: {
-    title: 'Oguzhan Oguz - Multimedia Engineer',
-    description: 'I\'m Oguzhan Oguz, studying Information and Network Engineering master\'s program at KTH Royal Institute of Technology. I\'m interested in image processing, video processing, audio processing, signal processing and AI automation.',
+    title: 'Oguzhan Oguz | Signal Processing and Perception Systems',
+    description: 'M.Sc. student at KTH working across signal processing, computer vision, sensor fusion, and machine learning.',
     url: 'https://oguzhanoguz.vercel.app',
     siteName: 'Oguzhan Oguz',
     images: [
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Oguzhan Oguz - Multimedia Engineer',
-    description: 'I\'m Oguzhan Oguz, studying Information and Network Engineering master\'s program at KTH Royal Institute of Technology. I\'m interested in image processing, video processing, audio processing, signal processing and AI automation.',
+    title: 'Oguzhan Oguz | Signal Processing and Perception Systems',
+    description: 'M.Sc. student at KTH working across signal processing, computer vision, sensor fusion, and machine learning.',
     images: ['https://oguzhanoguz.vercel.app/og-image.jpg'],
   },
   alternates: {

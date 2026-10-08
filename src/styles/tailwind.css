@@ -34,3 +34,19 @@
   --text-9xl: 8rem;
   --text-9xl--line-height: 1;
 }
+
+::selection {
+  background: #e6a17d;
+  color: #123232;
+}
+
+html {
+  background: #f7f1e7;
+}
+
+body {
+  background:
+    radial-gradient(circle at 92% 8%, rgb(230 161 125 / 0.18), transparent 24rem),
+    radial-gradient(circle at 4% 34%, rgb(79 135 127 / 0.1), transparent 26rem),
+    #f7f1e7;
+}

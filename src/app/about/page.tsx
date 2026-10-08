@@ -55,7 +55,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <Container className="mt-16 sm:mt-32">
+    <Container className="pt-16 sm:pt-24">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
         <div className="lg:pl-20">
           <div className="max-w-xs px-2.5 lg:max-w-none">
@@ -63,35 +63,29 @@ export default function About() {
               src={secondPortraitImage}
               alt="Oguzhan Oguz - Professional"
               sizes="(min-width: 1024px) 32rem, 20rem"
-              className="aspect-square -rotate-2 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+              className="aspect-square rounded-[1.7rem] bg-[#d9c8ad] object-cover"
             />
           </div>
         </div>
         <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I&apos;m Oguzhan Oguz, an innovative, passionate and ambitious engineer.
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#bd5a3d]">About</p>
+          <h1 className="mt-4 text-4xl font-semibold tracking-[-0.045em] text-[#123232] sm:text-6xl dark:text-[#f4efe6]">
+            I work on the signal-processing side of perception systems.
           </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+          <div className="mt-7 space-y-6 text-base leading-8 text-[#58706d] dark:text-[#b7c7c1]">
             <p>
-              I am studying in the Information and Network Engineering master&apos;s program at
-              KTH Royal Institute of Technology. My interests include signal, image, video,
-              speech, and audio processing, pattern recognition, machine learning, and
-              data-driven analysis. I am especially motivated by research and engineering
-              roles that connect theory with practical multimedia, AI, and signal-processing
-              systems.
+              I am an M.Sc. student in Information and Network Engineering at KTH Royal Institute of Technology, following the Multimedia Processing and Analysis track. My work spans signal, image, video, speech, and audio processing, as well as pattern recognition and machine learning.
             </p>
             <p>
-              Through my studies and projects, I aim to have a positive impact on
-              technology and humanity. You can review the projects I have done so far
-              on my website.
+              I enjoy turning signal-processing concepts into working systems, from sensor-based tracking and robust state estimation to audio enhancement and visual coding.
             </p>
             <p>
-              To contact: <a href="mailto:gsoguzhanoguz@gmail.com" className="text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300">gsoguzhanoguz@gmail.com</a>
+              For collaborations or engineering roles, contact me at <a href="mailto:oguzhano@kth.se" className="font-medium text-[#bd5a3d] underline underline-offset-4">oguzhano@kth.se</a>.
             </p>
           </div>
         </div>
         <div className="lg:pl-20">
-          <ul role="list">
+          <ul role="list" className="border-t border-[#163b3b]/15 pt-6 dark:border-white/15">
             <SocialLink href="https://github.com/ozzy35410" icon={GitHubIcon}>
               GitHub
             </SocialLink>

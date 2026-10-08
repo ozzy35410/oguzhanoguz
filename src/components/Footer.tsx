@@ -1,40 +1,20 @@
 import Link from 'next/link'
 
-import { ContainerInner, ContainerOuter } from '@/components/Container'
-
-function NavLink({
-  href,
-  children,
-}: {
-  href: string
-  children: React.ReactNode
-}) {
-  return (
-    <Link
-      href={href}
-      className="transition hover:text-teal-500 dark:hover:text-teal-400"
-    >
-      {children}
-    </Link>
-  )
-}
+import { Container } from '@/components/Container'
 
 export function Footer() {
   return (
-    <footer className="mt-32 flex-none">
-      <ContainerOuter>
-        <div className="border-t border-zinc-100 pt-10 pb-16 dark:border-zinc-700/40">
-          <ContainerInner>
-            <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-              <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                <NavLink href="/about">About</NavLink>
-                <NavLink href="/projects">Projects</NavLink>
-              </div>
-             
-            </div>
-          </ContainerInner>
+    <footer className="mt-28 pb-8 sm:mt-36">
+      <Container>
+        <div className="flex flex-col gap-4 border-t border-[#163b3b]/15 pt-6 text-sm text-[#58706d] dark:border-white/15 dark:text-[#b7c7c1] sm:flex-row sm:items-center sm:justify-between">
+          <p>Stockholm, Sweden</p>
+          <div className="flex gap-5 font-medium text-[#163b3b] dark:text-[#f4efe6]">
+            <Link href="/about" className="hover:text-[#bd5a3d]">About</Link>
+            <Link href="/projects" className="hover:text-[#bd5a3d]">Projects</Link>
+            <a href="mailto:oguzhano@kth.se" className="hover:text-[#bd5a3d]">Email</a>
+          </div>
         </div>
-      </ContainerOuter>
+      </Container>
     </footer>
   )
 }
