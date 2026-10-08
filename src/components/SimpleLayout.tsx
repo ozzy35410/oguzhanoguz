@@ -10,17 +10,17 @@ export function SimpleLayout({
   children?: React.ReactNode
 }) {
   return (
-    <Container className="pt-16 sm:pt-24">
-      <header className="max-w-3xl border-b border-[#163b3b]/15 pb-10 dark:border-white/15">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#bd5a3d]">Portfolio</p>
-        <h1 className="text-4xl font-semibold tracking-[-0.045em] text-[#123232] sm:text-6xl dark:text-[#f4efe6]">
+    <Container className="pt-12 sm:pt-16">
+      <header className="max-w-4xl border-b-2 border-[#13283a] pb-8 dark:border-[#d5e5d3]">
+        <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#c65336]">Portfolio / Project index</p>
+        <h1 className="text-4xl font-black tracking-[-0.055em] text-[#13283a] sm:text-6xl dark:text-[#f4f1e8]">
           {title}
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-[#58706d] dark:text-[#b7c7c1]">
+        <p className="mt-5 max-w-2xl text-lg leading-8 text-[#385064] dark:text-[#c2d0ca]">
           {intro}
         </p>
       </header>
-      {children && <div className="mt-12 sm:mt-16">{children}</div>}
+      {children && <div className="mt-10 sm:mt-14">{children}</div>}
     </Container>
   )
 }

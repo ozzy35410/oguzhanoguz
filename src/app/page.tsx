@@ -5,73 +5,79 @@ import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import portrait from '@/images/mezun.png'
 
-const featuredProjects = [
-  { number: '01', field: 'B.Sc. Graduation Project', title: 'Inside-Out Tracking Sensor Suite', text: 'A VR tracking prototype combining camera and IMU information for real-time 6-DoF head tracking.', href: '/projects/inside-out-tracking-sensor-suite' },
-  { number: '02', field: 'Pattern Recognition', title: 'Activity Recognition with HMMs', text: 'A Gaussian Hidden Markov Model for classifying activity sequences from smartphone accelerometer data.', href: '/projects/activity-recognition-using-a-baum-welch-trained-hidden-markov-model' },
-  { number: '03', field: 'Image and Video Processing', title: 'Video Coding with Motion Compensation', text: 'A rate-distortion comparison of intra coding, conditional replenishment, and motion compensation.', href: '/projects/video-coding-intra-conditional-replenishment-motion-compensation' },
+const projectRows = [
+  { id: 'P-01', area: 'SENSOR FUSION', title: 'Inside-Out Tracking Sensor Suite', result: 'Camera + IMU VR pose tracking', href: '/projects/inside-out-tracking-sensor-suite' },
+  { id: 'P-02', area: 'SEQUENTIAL ML', title: 'Activity Recognition with HMMs', result: 'Accelerometer time-series classification', href: '/projects/activity-recognition-using-a-baum-welch-trained-hidden-markov-model' },
+  { id: 'P-03', area: 'VIDEO CODING', title: 'Motion-Compensated Video Coding', result: 'Rate-distortion evaluation', href: '/projects/video-coding-intra-conditional-replenishment-motion-compensation' },
 ]
 
-function Arrow() {
-  return <span aria-hidden="true" className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
-}
+const skills = ['State estimation', 'Adaptive filtering', 'Computer vision', 'Signal analysis', 'Machine learning', 'Embedded systems']
 
 export default function Home() {
   return (
-    <Container className="pt-16 sm:pt-24">
-      <section className="grid items-end gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:gap-20">
+    <Container className="py-10 sm:py-14">
+      <section className="border-2 border-[#13283a] bg-[#f4f1e8] dark:border-[#d5e5d3] dark:bg-[#13283a]">
+        <div className="grid lg:grid-cols-[1.45fr_0.55fr]">
+          <div className="p-6 sm:p-10 lg:p-14">
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#c65336]">Available for research and engineering conversations</p>
+            <h1 className="mt-8 max-w-4xl text-5xl font-black leading-[0.9] tracking-[-0.065em] text-[#13283a] sm:text-7xl lg:text-8xl dark:text-[#f4f1e8]">Signals.<br />Systems.<br /><span className="text-[#ff6b4a]">Decisions.</span></h1>
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-[#385064] dark:text-[#c2d0ca]">I am Oguzhan Oguz, an M.Sc. student at KTH working on signal processing, visual perception, and robust estimation for real systems.</p>
+            <div className="mt-9 flex flex-wrap gap-3 font-mono text-xs font-bold uppercase tracking-[0.1em]">
+              <Link href="/projects" className="bg-[#13283a] px-5 py-3 text-[#f4f1e8] transition hover:bg-[#ff6b4a] dark:bg-[#d5e5d3] dark:text-[#13283a]">Browse project index →</Link>
+              <a href="/CV.pdf" target="_blank" rel="noopener noreferrer" className="border-2 border-[#13283a] px-5 py-3 text-[#13283a] transition hover:bg-[#ff6b4a] dark:border-[#d5e5d3] dark:text-[#d5e5d3]">Open CV [PDF]</a>
+            </div>
+          </div>
+          <div className="relative min-h-80 border-t-2 border-[#13283a] bg-[#d5e5d3] p-6 dark:border-[#d5e5d3] dark:bg-[#f4f1e8] lg:border-t-0 lg:border-l-2">
+            <p className="font-mono text-[0.64rem] font-bold uppercase tracking-[0.14em] text-[#385064]">Field note 001</p>
+            <Image src={portrait} alt="Oguzhan Oguz" priority className="absolute bottom-0 right-0 h-[84%] w-auto object-contain object-bottom" />
+            <div className="absolute bottom-6 left-6 max-w-[13rem] border-l-2 border-[#ff6b4a] pl-3 font-mono text-xs leading-5 text-[#13283a]">Multimedia Processing &amp; Analysis<br />KTH Royal Institute of Technology</div>
+          </div>
+        </div>
+        <div className="grid border-t-2 border-[#13283a] bg-[#13283a] text-[#f4f1e8] sm:grid-cols-3 dark:border-[#d5e5d3]">
+          <Stat value="2025-27" label="M.Sc. at KTH" />
+          <Stat value="2026" label="Ongoing SLAM research" />
+          <Stat value="3.57/4.00" label="B.Sc. GPA at METU" />
+        </div>
+      </section>
+
+      <section className="mt-14 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#bd5a3d]">Stockholm, Sweden · KTH Royal Institute of Technology</p>
-          <h1 className="mt-5 max-w-4xl text-5xl font-semibold leading-[0.98] tracking-[-0.055em] text-[#123232] sm:text-7xl dark:text-[#f4efe6]">Perception systems for imperfect signals.</h1>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#49615e] dark:text-[#c8d8d1]">I am Oguzhan Oguz, an M.Sc. student in Information and Network Engineering at KTH. I work across signal processing, computer vision, sensor fusion, and machine learning.</p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Link href="/projects" className="rounded-full bg-[#123232] px-5 py-3 text-sm font-semibold text-[#f7f1e7] transition hover:bg-[#bd5a3d] dark:bg-[#f4efe6] dark:text-[#123232] dark:hover:bg-[#e6a17d]">Explore projects <Arrow /></Link>
-            <a href="/CV.pdf" target="_blank" rel="noopener noreferrer" className="rounded-full border border-[#163b3b]/25 px-5 py-3 text-sm font-semibold text-[#163b3b] transition hover:border-[#bd5a3d] hover:text-[#bd5a3d] dark:border-white/30 dark:text-[#f4efe6]">View CV</a>
-          </div>
-          <div className="mt-10 flex gap-5">
-            <a href="https://github.com/ozzy35410" aria-label="GitHub" className="text-[#355150] transition hover:text-[#bd5a3d] dark:text-[#c8d8d1]"><GitHubIcon className="h-5 w-5 fill-current" /></a>
-            <a href="https://www.linkedin.com/in/oguzhan-oguz-" aria-label="LinkedIn" className="text-[#355150] transition hover:text-[#bd5a3d] dark:text-[#c8d8d1]"><LinkedInIcon className="h-5 w-5 fill-current" /></a>
-            <a href="mailto:oguzhano@kth.se" className="text-sm font-medium text-[#355150] underline decoration-[#bd5a3d]/50 underline-offset-4 transition hover:text-[#bd5a3d] dark:text-[#c8d8d1]">oguzhano@kth.se</a>
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#c65336]">Current line of work</p>
+          <h2 className="mt-4 text-3xl font-black tracking-[-0.045em] text-[#13283a] dark:text-[#f4f1e8]">Robust perception when measurements get difficult.</h2>
+          <p className="mt-5 leading-7 text-[#385064] dark:text-[#c2d0ca]">My current KTH project investigates LiDAR-Visual-Inertial SLAM under weak geometry, visual feature starvation, and challenging motion. Earlier work spans audio enhancement, video processing, and sequential classification.</p>
+          <div className="mt-6 flex gap-4">
+            <a href="https://github.com/ozzy35410" aria-label="GitHub" className="text-[#13283a] hover:text-[#ff6b4a] dark:text-[#d5e5d3]"><GitHubIcon className="h-5 w-5 fill-current" /></a>
+            <a href="https://www.linkedin.com/in/oguzhan-oguz-" aria-label="LinkedIn" className="text-[#13283a] hover:text-[#ff6b4a] dark:text-[#d5e5d3]"><LinkedInIcon className="h-5 w-5 fill-current" /></a>
+            <a href="mailto:oguzhano@kth.se" className="font-mono text-xs font-bold uppercase tracking-[0.08em] text-[#13283a] underline decoration-[#ff6b4a] decoration-2 underline-offset-4 dark:text-[#d5e5d3]">Email me</a>
           </div>
         </div>
-        <div className="relative mx-auto w-full max-w-sm lg:mx-0 lg:justify-self-end">
-          <div className="absolute -inset-4 -rotate-3 rounded-[2rem] border border-[#bd5a3d]/35" />
-          <div className="relative overflow-hidden rounded-[1.7rem] bg-[#d9c8ad]"><Image src={portrait} alt="Oguzhan Oguz" priority className="aspect-[4/5] w-full object-cover" /></div>
-          <p className="mt-4 text-xs font-medium uppercase tracking-[0.17em] text-[#58706d] dark:text-[#b7c7c1]">Multimedia Processing &amp; Analysis</p>
+        <div className="border-t-2 border-[#13283a] dark:border-[#d5e5d3]">
+          <p className="py-3 font-mono text-[0.64rem] font-bold uppercase tracking-[0.14em] text-[#617180]">Methods and tools</p>
+          <div className="grid grid-cols-2 border-l-2 border-t-2 border-[#13283a] sm:grid-cols-3 dark:border-[#d5e5d3]">
+            {skills.map((skill, index) => <div key={skill} className="border-b-2 border-r-2 border-[#13283a] p-4 font-mono text-xs font-bold uppercase tracking-[0.06em] text-[#13283a] dark:border-[#d5e5d3] dark:text-[#d5e5d3]"><span className="mr-2 text-[#ff6b4a]">0{index + 1}</span>{skill}</div>)}
+          </div>
         </div>
       </section>
 
-      <section className="mt-24 border-y border-[#163b3b]/15 py-9 dark:border-white/15 sm:mt-32">
-        <div className="grid gap-8 md:grid-cols-3 md:gap-12">
-          <Info label="Current focus" title="LiDAR-Visual-Inertial SLAM" text="Ongoing KTH project on robustness in geometrically degenerate environments." />
-          <Info label="Education" title="M.Sc. at KTH" text="Information and Network Engineering, 2025-2027." />
-          <Info label="Background" title="Electrical Engineering" text="B.Sc. from METU with hands-on work in embedded systems and signal processing." />
+      <section className="mt-20 sm:mt-28">
+        <div className="flex items-end justify-between gap-6 border-b-2 border-[#13283a] pb-4 dark:border-[#d5e5d3]">
+          <div><p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#c65336]">Selected project records</p><h2 className="mt-3 text-4xl font-black tracking-[-0.05em] text-[#13283a] dark:text-[#f4f1e8]">Work worth opening.</h2></div>
+          <Link href="/projects" className="shrink-0 font-mono text-xs font-bold uppercase tracking-[0.08em] text-[#13283a] hover:text-[#ff6b4a] dark:text-[#d5e5d3]">Full index →</Link>
         </div>
-      </section>
-
-      <section className="mt-24 sm:mt-32">
-        <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-          <div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#bd5a3d]">Selected work</p><h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em] text-[#123232] dark:text-[#f4efe6]">Projects with a point of view.</h2></div>
-          <Link href="/projects" className="group text-sm font-semibold text-[#163b3b] underline decoration-[#bd5a3d] decoration-2 underline-offset-4 hover:text-[#bd5a3d] dark:text-[#f4efe6]">All projects <Arrow /></Link>
-        </div>
-        <div className="mt-10 grid divide-y divide-[#163b3b]/15 border-y border-[#163b3b]/15 dark:divide-white/15 dark:border-white/15">
-          {featuredProjects.map((project) => (
-            <Link href={project.href} key={project.href} className="group grid gap-5 py-7 transition sm:grid-cols-[4rem_1fr_auto] sm:items-start sm:gap-8 hover:px-3">
-              <span className="font-mono text-sm text-[#bd5a3d]">{project.number}</span>
-              <div><p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#58706d] dark:text-[#b7c7c1]">{project.field}</p><h3 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-[#123232] dark:text-[#f4efe6]">{project.title}</h3><p className="mt-2 max-w-xl text-sm leading-6 text-[#58706d] dark:text-[#b7c7c1]">{project.text}</p></div>
-              <span className="text-xl text-[#bd5a3d] transition-transform group-hover:translate-x-1">→</span>
+        <div className="border-l-2 border-[#13283a] dark:border-[#d5e5d3]">
+          {projectRows.map((project) => (
+            <Link key={project.id} href={project.href} className="group grid gap-3 border-b-2 border-r-2 border-[#13283a] p-5 transition-colors hover:bg-[#ff6b4a] sm:grid-cols-[5rem_1fr_auto] sm:items-center sm:gap-6 dark:border-[#d5e5d3] dark:hover:bg-[#ff6b4a]">
+              <span className="font-mono text-xs font-bold text-[#c65336] group-hover:text-[#13283a]">{project.id}</span>
+              <div><p className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.14em] text-[#617180] group-hover:text-[#13283a]">{project.area}</p><h3 className="mt-1 text-xl font-bold tracking-[-0.025em] text-[#13283a]">{project.title}</h3></div>
+              <span className="font-mono text-xs uppercase tracking-[0.07em] text-[#385064] group-hover:text-[#13283a]">{project.result} →</span>
             </Link>
           ))}
         </div>
-      </section>
-
-      <section className="mt-24 grid gap-10 rounded-[2rem] bg-[#123232] p-8 text-[#f7f1e7] sm:mt-32 sm:grid-cols-[1fr_auto] sm:items-end sm:p-12">
-        <div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#e6a17d]">Open to conversations</p><h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">Interested in work at the intersection of sensing, learning, and real-world systems.</h2></div>
-        <a href="mailto:oguzhano@kth.se" className="rounded-full bg-[#e6a17d] px-5 py-3 text-center text-sm font-semibold text-[#123232] transition hover:bg-[#f7f1e7]">Get in touch <Arrow /></a>
       </section>
     </Container>
   )
 }
 
-function Info({ label, title, text }: { label: string; title: string; text: string }) {
-  return <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#bd5a3d]">{label}</p><p className="mt-3 text-xl font-semibold leading-7 text-[#123232] dark:text-[#f4efe6]">{title}</p><p className="mt-2 text-sm leading-6 text-[#58706d] dark:text-[#b7c7c1]">{text}</p></div>
+function Stat({ value, label }: { value: string; label: string }) {
+  return <div className="border-b-2 border-[#f4f1e8]/25 p-5 last:border-b-0 sm:border-r-2 sm:border-b-0 sm:last:border-r-0"><p className="font-mono text-xl font-bold text-[#ff8d72]">{value}</p><p className="mt-1 font-mono text-[0.62rem] uppercase tracking-[0.12em] text-[#c2d0ca]">{label}</p></div>
 }

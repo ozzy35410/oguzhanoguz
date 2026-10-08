@@ -4,17 +4,8 @@ import { Container } from '@/components/Container'
 
 export function Footer() {
   return (
-    <footer className="mt-28 pb-8 sm:mt-36">
-      <Container>
-        <div className="flex flex-col gap-4 border-t border-[#163b3b]/15 pt-6 text-sm text-[#58706d] dark:border-white/15 dark:text-[#b7c7c1] sm:flex-row sm:items-center sm:justify-between">
-          <p>Stockholm, Sweden</p>
-          <div className="flex gap-5 font-medium text-[#163b3b] dark:text-[#f4efe6]">
-            <Link href="/about" className="hover:text-[#bd5a3d]">About</Link>
-            <Link href="/projects" className="hover:text-[#bd5a3d]">Projects</Link>
-            <a href="mailto:oguzhano@kth.se" className="hover:text-[#bd5a3d]">Email</a>
-          </div>
-        </div>
-      </Container>
+    <footer className="mt-24 border-t-2 border-[#13283a] bg-[#13283a] py-8 text-[#f4f1e8] dark:border-[#d5e5d3] sm:mt-32">
+      <Container><div className="flex flex-col gap-5 text-sm sm:flex-row sm:items-center sm:justify-between"><p className="font-mono text-xs uppercase tracking-[0.12em] text-[#c2d0ca]">Stockholm, Sweden · 2026</p><div className="flex gap-5 font-mono text-xs uppercase tracking-[0.1em]"><Link href="/about" className="hover:text-[#ff8d72]">Profile</Link><Link href="/projects" className="hover:text-[#ff8d72]">Projects</Link><a href="mailto:oguzhano@kth.se" className="hover:text-[#ff8d72]">Email</a></div></div></Container>
     </footer>
   )
 }
