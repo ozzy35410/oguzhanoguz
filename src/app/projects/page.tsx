@@ -187,6 +187,7 @@ const kthImageVideoProjects = [
 
 export default function Projects() {
   const [kthExpanded, setKthExpanded] = useState(false)
+  const [kthImageGenerationExpanded, setKthImageGenerationExpanded] = useState(false)
   const [kthPatternRecognitionExpanded, setKthPatternRecognitionExpanded] = useState(false)
   const [kthAdaptiveExpanded, setKthAdaptiveExpanded] = useState(false)
   const [kthSpeechAudioExpanded, setKthSpeechAudioExpanded] = useState(false)
@@ -350,6 +351,30 @@ export default function Projects() {
 
           {kthExpanded && (
             <div className="mt-6 space-y-6">
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setKthImageGenerationExpanded(!kthImageGenerationExpanded)}
+                  aria-expanded={kthImageGenerationExpanded}
+                  className="w-full flex items-center justify-between p-3 bg-zinc-50 dark:bg-zinc-800/50 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-700/50 transition-colors"
+                >
+                  <h3 className="text-left text-xl font-semibold text-zinc-700 dark:text-zinc-200">
+                    EQ2445 Project in Multimedia Processing and Analysis
+                  </h3>
+                  <ChevronDownIcon className={`h-5 w-5 flex-none text-zinc-500 transition-transform ${kthImageGenerationExpanded ? 'rotate-180' : ''}`} />
+                </button>
+                {kthImageGenerationExpanded && (
+                  <div className="mt-4 px-3">
+                    <h4 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                      Image Generation Using Flow Matching
+                    </h4>
+                    <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                      This ongoing project explores flow matching for image-to-image generation. We plan to train and test a model, investigate how its starting noise affects reconstruction of the original images, and evaluate image quality using PSNR, DISTS, and LPIPS.
+                    </p>
+                    <p className="mt-3 text-xs font-medium text-zinc-500 dark:text-zinc-400">In progress</p>
+                  </div>
+                )}
+              </div>
               {/* EQ2341 Pattern Recognition and Machine Learning Course Button */}
               <div>
                 <button

@@ -184,14 +184,6 @@ function Education() {
 function Work() {
   let work: Array<Role> = [
     {
-      company: 'KTH Royal Institute of Technology',
-      title: 'Ongoing LiDAR-Visual-Inertial SLAM project',
-      description: 'Working with Yixi Cai on degeneracy-aware LiDAR-Visual-Inertial SLAM. The work investigates robust state estimation when sensor measurements become less informative.',
-      logo: logoKth,
-      start: '07/2026',
-      end: 'Present',
-    },
-    {
       company: 'DEICO Engineering Inc.',
       title: 'Test Engineering Internship - Developed C# control and test interfaces for communication-protocol devices',
       logo: logoDeico,
@@ -226,7 +218,30 @@ function Work() {
   )
 }
 
-const highlightedProjects = [
+const highlightedProjects: Array<{
+  title: string
+  eyebrow: string
+  note: string
+  description: string
+  href?: string
+  status?: string
+}> = [
+  {
+    title: 'Degeneracy-Aware LiDAR-Visual-Inertial SLAM',
+    eyebrow: 'KTH Project · July 2026 - Present',
+    note: 'LiDAR + camera + IMU · state estimation',
+    description:
+      'Working with Yixi Cai on robust state estimation when sensor measurements become less informative.',
+    status: 'In progress',
+  },
+  {
+    title: 'Image Generation Using Flow Matching',
+    eyebrow: 'EQ2445 Project in Multimedia Processing and Analysis',
+    note: 'Flow matching · image generation',
+    description:
+      'Exploring image-to-image generation with flow matching, with the aim of reconstructing original images and evaluating their quality.',
+    status: 'In progress',
+  },
   {
     title: 'Inside-Out Tracking Sensor Suite',
     eyebrow: 'B.Sc. Graduation Project',
@@ -262,7 +277,7 @@ function HighlightedProjects() {
       </h2>
       <div className="mt-6 space-y-8">
         {highlightedProjects.map((project) => (
-          <Card key={project.href} as="article">
+          <Card key={project.title} as="article">
             <Card.Eyebrow decorate>{project.eyebrow}</Card.Eyebrow>
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
               <Card.Title href={project.href}>{project.title}</Card.Title>
@@ -271,7 +286,11 @@ function HighlightedProjects() {
               </p>
             </div>
             <Card.Description>{project.description}</Card.Description>
-            <Card.Cta>View project</Card.Cta>
+            {project.href ? (
+              <Card.Cta>View project</Card.Cta>
+            ) : (
+              <p className="mt-4 text-xs font-medium text-zinc-500 dark:text-zinc-400">{project.status}</p>
+            )}
           </Card>
         ))}
       </div>
