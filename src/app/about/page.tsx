@@ -69,24 +69,21 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I&apos;m Oguzhan Oguz, an innovative, passionate and ambitious engineer.
+            Hi, I&apos;m Oguzhan. Welcome to my corner of the internet.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I am studying in the Information and Network Engineering master&apos;s program at
-              KTH Royal Institute of Technology. My interests include signal, image, video,
-              speech, and audio processing, pattern recognition, machine learning, and
-              data-driven analysis. I am especially motivated by research and engineering
-              roles that connect theory with practical multimedia, AI, and signal-processing
-              systems.
+              I&apos;m currently pursuing a master&apos;s degree in Information and Network Engineering at KTH Royal Institute of Technology, with a background in Electrical and Electronics Engineering.
             </p>
             <p>
-              Through my studies and projects, I aim to have a positive impact on
-              technology and humanity. You can review the projects I have done so far
-              on my website.
+              My interests lie in <strong>signal processing</strong>, <strong>computer vision</strong>, <strong>machine learning</strong>, <strong>robotics</strong>, and <strong>sensor fusion</strong>, particularly in how these fields come together to solve real-world problems.
             </p>
             <p>
-              To contact: <a href="mailto:gsoguzhanoguz@gmail.com" className="text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300">gsoguzhanoguz@gmail.com</a>
+              I enjoy exploring new ideas, working on challenging technical problems, and turning theoretical concepts into practical solutions. Through my studies and projects, I aim to keep learning, building, and contributing to meaningful technological developments.
+            </p>
+            <p>Feel free to explore my projects and get in touch!</p>
+            <p>
+              <strong>Contact:</strong> <a href="mailto:oguzhano@kth.se" className="text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300">oguzhano@kth.se</a>
             </p>
           </div>
         </div>

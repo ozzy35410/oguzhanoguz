@@ -364,14 +364,23 @@ export default function Projects() {
                   <ChevronDownIcon className={`h-5 w-5 flex-none text-zinc-500 transition-transform ${kthImageGenerationExpanded ? 'rotate-180' : ''}`} />
                 </button>
                 {kthImageGenerationExpanded && (
-                  <div className="mt-4 px-3">
-                    <h4 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                      Image Generation Using Flow Matching
-                    </h4>
-                    <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                      This ongoing project explores flow matching for image-to-image generation. We plan to train and test a model, investigate how its starting noise affects reconstruction of the original images, and evaluate image quality using PSNR, DISTS, and LPIPS.
-                    </p>
-                    <p className="mt-3 text-xs font-medium text-zinc-500 dark:text-zinc-400">In progress</p>
+                  <div className="mt-4">
+                    <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+                      <Card as="li">
+                        <div className="mb-2 flex items-center gap-2">
+                          <Card.Link href="/projects/image-generation-using-flow-matching">
+                            <h4 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">Image Generation Using Flow Matching</h4>
+                          </Card.Link>
+                        </div>
+                        <div className="mt-2">
+                          <p className="text-sm text-zinc-600 dark:text-zinc-400">EQ2445 Project in Multimedia Processing and Analysis • November 2026 - Present</p>
+                          <span className="mt-2 inline-block rounded-full bg-amber-100 px-2 py-1 text-xs text-amber-800 dark:bg-amber-900 dark:text-amber-200">In progress</span>
+                        </div>
+                        <div className="mt-4">
+                          <Card.Description>Exploring flow matching for image-to-image generation and reconstruction, with image quality evaluated using PSNR, DISTS, and LPIPS.</Card.Description>
+                        </div>
+                      </Card>
+                    </ul>
                   </div>
                 )}
               </div>

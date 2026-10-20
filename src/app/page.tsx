@@ -153,6 +153,7 @@ function Education() {
     {
       company: 'KTH Royal Institute of Technology',
       title: 'Master of Science in Information and Network Engineering (Multimedia Processing and Analysis track)',
+      description: 'GPA: 4.88/5',
       logo: logoKth,
       start: '2025',
       end: '2027',
@@ -160,6 +161,7 @@ function Education() {
     {
       company: 'Middle East Technical University',
       title: 'Bachelor of Science in Electrical–Electronics Engineering',
+      description: 'GPA: 3.57/4',
       logo: logoMetu,
       start: '2020',
       end: '2025',
@@ -240,6 +242,7 @@ const highlightedProjects: Array<{
     note: 'Flow matching · image generation',
     description:
       'Exploring image-to-image generation with flow matching, with the aim of reconstructing original images and evaluating their quality.',
+    href: '/projects/image-generation-using-flow-matching',
     status: 'In progress',
   },
   {
@@ -304,10 +307,10 @@ export default function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Oguzhan Oguz - Multimedia Engineer
+            Oguzhan Oguz - Electrical Engineer &amp; M.Sc. Student
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I&apos;m Oguzhan Oguz. I am studying in the Information and Network Engineering master&apos;s program at KTH Royal. You can see my projects on my page.
+            I&apos;m Oguzhan Oguz. I am studying in the Information and Network Engineering master&apos;s program at KTH Royal. You can explore my work on this website.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink href="https://github.com/ozzy35410" aria-label="Follow on GitHub" icon={GitHubIcon} />
